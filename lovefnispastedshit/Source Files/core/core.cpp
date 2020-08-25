@@ -42,13 +42,13 @@ namespace Core {
 			return FALSE;
 		}
 
-		auto mesh = ReadPointer(Core::TargetPawn, 0x278);
+		auto mesh = ReadPointer(Core::TargetPawn, 0x280);
 		if (!mesh) {
 			return FALSE;
 		}
 
-		auto bones = ReadPointer(mesh, 0x420);
-		if (!bones) bones = ReadPointer(mesh, 0x420 + 0x10);
+		auto bones = ReadPointer(mesh, 0x468);
+		if (!bones) bones = ReadPointer(mesh, 0x468 + 0x10);
 		if (!bones) {
 			return FALSE;
 		}
