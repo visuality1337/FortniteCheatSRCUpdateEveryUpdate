@@ -156,32 +156,32 @@ namespace Offsets {
 		}
 
 
-		Engine::World::OwningGameInstance = 0x190;			 // leaked by YTMcGamer#1337
-		Engine::World::Levels = 0x148;						 // leaked by YTMcGamer#1337
-		Engine::GameInstance::LocalPlayers = 0x38;			 // leaked by YTMcGamer#1337
-		Engine::Player::PlayerController = 0x30;			 // leaked by YTMcGamer#1337
-		Engine::PlayerController::AcknowledgedPawn = 0x2A0;  // leaked by YTMcGamer#1337
-		Engine::Controller::ControlRotation = 0x288;		 // leaked by YTMcGamer#1337
-		Engine::Pawn::PlayerState = 0x240;					 // leaked by YTMcGamer#1337
-		Engine::Actor::RootComponent = 0x130;				 // leaked by YTMcGamer#1337
-		Engine::Character::Mesh = 0x280;					 // leaked by YTMcGamer#1337
-		Engine::SceneComponent::RelativeLocation = 0x11C;    // leaked by YTMcGamer#1337
-		Engine::SceneComponent::ComponentVelocity = 0x140;   // leaked by YTMcGamer#1337
-		Engine::StaticMeshComponent::StaticMesh = 0x468;     //leaked by YTMcGamer#1337
-		Engine::SkinnedMeshComponent::CachedWorldSpaceBounds = 0x600;// leaked by YTMcGamer#1337
-		FortniteGame::FortPawn::bIsDBNO = 0x552;			// leaked by YTMcGamer#1337
-		FortniteGame::FortPawn::bIsDying = 0x538;           // leaked by YTMcGamer#1337
-		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xe68; //0xe68
-		FortniteGame::FortPickup::PrimaryPickupItemEntry = 0x298; // leaked by YTMcGamer#1337
-		FortniteGame::FortItemDefinition::DisplayName = 0x70; // leaked by YTMcGamer#1337
-		FortniteGame::FortItemDefinition::Tier = 0x54; // leaked by YTMcGamer#1337
-		FortniteGame::FortItemEntry::ItemDefinition = 0x18;// leaked by YTMcGamer#1337
-		FortniteGame::FortPawn::CurrentWeapon = 0x5A0;// leaked by YTMcGamer#1337
-		FortniteGame::FortWeapon::WeaponData = 0x378;// leaked by YTMcGamer#1337
-		FortniteGame::FortWeaponItemDefinition::WeaponStatHandle = 0x7B8;// leaked by YTMcGamer#1337
-		FortniteGame::FortProjectileAthena::FireStartLoc = 0x880;// leaked by YTMcGamer#1337
-		FortniteGame::FortBaseWeaponStats::ReloadTime = 0xfc;// leaked by YTMcGamer#1337
-		FortniteGame::BuildingContainer::bAlreadySearched = 0xc71;// leaked by YTMcGamer#1337
+		Engine::World::OwningGameInstance = 0x190;
+		Engine::World::Levels = 0x148;
+		Engine::GameInstance::LocalPlayers = 0x38;
+		Engine::Player::PlayerController = 0x30;
+		Engine::PlayerController::AcknowledgedPawn = 0x2A0;
+		Engine::Controller::ControlRotation = 0x288;
+		Engine::Pawn::PlayerState = 0x240;
+		Engine::Actor::RootComponent = 0x130;
+		Engine::Character::Mesh = 0x280;
+		Engine::SceneComponent::RelativeLocation = 0x11C;
+		Engine::SceneComponent::ComponentVelocity = 0x140;
+		Engine::StaticMeshComponent::StaticMesh = 0x468;
+		Engine::SkinnedMeshComponent::CachedWorldSpaceBounds = 0x600;
+		FortniteGame::FortPawn::bIsDBNO = 0x552;
+		FortniteGame::FortPawn::bIsDying = 0x538;
+		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xe68;
+		FortniteGame::FortPickup::PrimaryPickupItemEntry = 0x298;
+		FortniteGame::FortItemDefinition::DisplayName = 0x70;
+		FortniteGame::FortItemDefinition::Tier = 0x54;
+		FortniteGame::FortItemEntry::ItemDefinition = 0x18;
+		FortniteGame::FortPawn::CurrentWeapon = 0x5A0;
+		FortniteGame::FortWeapon::WeaponData = 0x378;
+		FortniteGame::FortWeaponItemDefinition::WeaponStatHandle = 0x7B8;
+		FortniteGame::FortProjectileAthena::FireStartLoc = 0x880;
+		FortniteGame::FortBaseWeaponStats::ReloadTime = 0xfc;
+		FortniteGame::BuildingContainer::bAlreadySearched = 0xc71;
 
 
 
