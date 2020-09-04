@@ -1,4 +1,4 @@
-# IMPORTAN I AM IN HOLIDAY WITH THE NEW SEASON SO GIVE ME LIKE 4 DAYS TO UPDATE IT
+# Only works in creativ (season 4)
 # FortniteCheatSRCUpdateEveryUpdate
 A free FortniteCheatExample. (get updated every update)
 
