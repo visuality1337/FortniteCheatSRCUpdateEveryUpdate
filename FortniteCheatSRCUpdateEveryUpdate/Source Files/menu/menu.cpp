@@ -394,7 +394,7 @@ __declspec(dllexport) HRESULT PresentHook(IDXGISwapChain* swapChain, UINT syncIn
 
 		std::vector<PVOID> playerPawns;
 		for (auto li = 0UL; li < ReadDWORD(world, Offsets::Engine::World::Levels + sizeof(PVOID)); ++li) {
-			auto levels = ReadPointer(world, 0x148);//Levels
+			auto levels = ReadPointer(world, 0x138);
 			if (!levels) break;
 
 			auto level = ReadPointer(levels, li * sizeof(PVOID));
