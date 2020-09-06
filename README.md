@@ -1,4 +1,3 @@
-# Only works in creativ (season 4)
 # FortniteCheatSRCUpdateEveryUpdate
 A free FortniteCheatExample. (get updated every update)
 
