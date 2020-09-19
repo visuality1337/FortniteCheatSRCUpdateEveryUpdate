@@ -1,3 +1,4 @@
+# SILENT AND MEMORY ARE NOT WORKING MAYBE SILENT FIX MAYBE SOON.
 # FortniteCheatSRCUpdateEveryUpdate
 A free FortniteCheatExample. (get updated every update)
 
