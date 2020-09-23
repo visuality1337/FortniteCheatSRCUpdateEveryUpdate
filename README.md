@@ -1,6 +1,5 @@
-# SILENT AND MEMORY ARE NOT WORKING MAYBE SILENT FIX MAYBE SOON.
 # FortniteCheatSRCUpdateEveryUpdate
-A free FortniteCheatExample. (get updated every update)
+A free FortniteCheatSRC. (get updated every update)
 
 # Injector
 Injector only works for 1903 and 1909.
