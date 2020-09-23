@@ -47,7 +47,7 @@ namespace SettingsHelper {
 		config_system.item.FreeCamRotationLock = false;
 		config_system.item.FreeCam = false;
 		config_system.item.FreeCamSpeed = 1.00f;
-		config_system.item.CheckVisible = true;
+		config_system.item.CheckVisible = false;
 		config_system.item.AimbotFOV = 200.0f;
 		config_system.item.AimbotSlow = 0.0f;
 		config_system.item.InstantReload = false;
