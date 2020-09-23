@@ -429,10 +429,6 @@ __declspec(dllexport) HRESULT PresentHook(IDXGISwapChain* swapChain, UINT syncIn
 
 					AddMarker(window, width, height, localPlayerLocation, pawn, "Boat", ImGui::GetColorU32({ 1.0f, 0.0f, 0.0f, 1.0f }));
 				}
-				else if (config_system.item.boat && wcsstr(name.c_str(), L"")) {
-
-					AddMarker(window, width, height, localPlayerLocation, pawn, "THIS IS PASTED LMAFO FIX UR SELF", ImGui::GetColorU32({ 1.0f, 0.0f, 0.0f, 1.0f }));
-				}
 			}
 		}
 
