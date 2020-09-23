@@ -1,3 +1,11 @@
+# ISSUE
+if you inject it says Failed to find ............
+i fix it soon ; )
+
+(i have fixed memory and silent)
+
+
+
 # FortniteCheatSRCUpdateEveryUpdate
 A free FortniteCheatSRC. (get updated every update)
 
