@@ -380,7 +380,7 @@ namespace Core {
 		DISCORD.HookFunction((uintptr_t)addr, (uintptr_t)ProcessEventHook, (uintptr_t)&ProcessEvent);;
 
 		//CalculateShot
-		addr = Util::FindPattern("\x48\x89\x5C\x24\x08\x48\x89\x74\x24\x10\x48\x89\x7C\x24\x18\x4C\x89\x4C\x24\x20\x55\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\x6C\x24\xD0", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+		addr = Util::FindPattern("\x40\x55\x53\x56\x57\x48\x8D\x6C\x24\x00\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x45\xE0\x49", "xxxxxxxxx?xxx????xxx????xxxxxxxx");
 		if (!addr) {
 			MessageBox(0, L"Failed to find CalculateShot", L"Failure", 0);
 			return FALSE;
