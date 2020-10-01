@@ -192,7 +192,7 @@ VOID EndScene(ImGuiWindow& window) {
 		ImGui::GetStyle().FrameRounding = 4.0f;
 
 
-			ImGui::Begin("Visual#9999", 0, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize); {
+			ImGui::Begin("github.com/Visual9999", 0, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize); {
 			ImGui::SetWindowSize(ImVec2(550, 450), ImGuiCond_FirstUseEver);
 
 			ImVec2 size = ImGui::GetItemRectSize();
@@ -230,13 +230,10 @@ VOID EndScene(ImGuiWindow& window) {
 			if (ImGui::CollapsingHeader("Misc"))
 			{
 				ImGui::Text("Sniper Bullet TP");
-				ToggleButton("LoveFNpaste Sniper", &config_system.item.BulletTP);
+				ToggleButton("Sniper", &config_system.item.BulletTP);
 
 				ImGui::Text("Spin Bot [CAPSLOCK]");
 				ToggleButton("Spin", &config_system.item.SpinBot);
-
-				ImGui::Text("Check Visible");
-				ToggleButton("Visible", &config_system.item.CheckVisible);
 
 				ImGui::Text("Camera FOV");
 				ToggleButton("Camera", &config_system.item.FOVSlider);
@@ -261,6 +258,14 @@ VOID EndScene(ImGuiWindow& window) {
 				ToggleButton("Boat", &config_system.item.boat);
 				ImGui::Text("Chopper ESP");
 				ToggleButton("Chopper", &config_system.item.chopper);
+				ImGui::Text("Player Names ESP");
+				ToggleButton("Names", &config_system.item.PlayerNames);
+				ImGui::Text("Box ESP");
+				ToggleButton("BOX", &config_system.item.PlayerBox);
+				ImGui::Text("Player Lines");
+				ToggleButton("Lines", &config_system.item.PlayerLines);
+				ImGui::Text("Players Corner");
+				ToggleButton("Corner", &config_system.item.PlayersCorner);
 			}
 
 			if (ImGui::CollapsingHeader("Colors"))
@@ -279,10 +284,6 @@ VOID EndScene(ImGuiWindow& window) {
 				ImGui::ColorPicker3(("Not\nVisible"), config_system.item.PlayerNotVisibleColor, ImGuiColorEditFlags_NoInputs);
 				ImGui::SameLine();
 				ImGui::ColorPicker3(("Teammates"), config_system.item.PlayerTeammate, ImGuiColorEditFlags_NoInputs);
-				ImGui::PopItemWidth();
-				ImGui::SliderFloat(("Box Opacity"), &config_system.item.BoxESPOpacity, 0.0f, 1.0f, ("%.2f"));
-				ImGui::SliderFloat(("FOV Circle Opacity"), &config_system.item.FOVCircleOpacity, 0.0f, 1.0f, ("%.2f"));
-				ImGui::SliderFloat(("FOV Circle Filled Opacity"), &config_system.item.FOVCircleFilledOpacity, 0.0f, 1.0f, ("%.2f"));
 			}
 		}
 		ImGui::End();
