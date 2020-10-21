@@ -1,6 +1,5 @@
 # ISSUE
-Only Memory Aim works fine.
-I already have a fix for silent but i dont want to publish it so all kids: I FIXED SILENT OMG.
+Error if injection i only need to change 1 pattern : ) i dont have time now but later
 
 # Are you allowed to Publish it?
 I allow to publish but with credits. 
