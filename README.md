@@ -18,6 +18,7 @@ IF YOU NEED HELP OPEN A GITHUB ISSUE.
 
 | Fortnite Versions | Supported          |
 | ------- | ------------------ |
+| 14.40   | :x: SOON!|
 | 14.30   | :white_check_mark: |
 | 14.20   | :white_check_mark: |
 | 14.10   | :x: |
