@@ -157,7 +157,7 @@ namespace Offsets {
 		Engine::GameInstance::LocalPlayers = 0x38;
 		Engine::World::OwningGameInstance = 0x180;
 		Engine::Controller::ControlRotation = 0x288;
-		Engine::Player::PlayerController = 0x30;
+		Engine::PlayerController::PlayerCameraManager = 0x2B8;
 		Engine::PlayerController::AcknowledgedPawn = 0x2A0;
 		Engine::Pawn::PlayerState = 0x240;
 		Engine::Actor::RootComponent = 0x130;
@@ -179,8 +179,6 @@ namespace Offsets {
 		FortniteGame::FortProjectileAthena::FireStartLoc = 0x878;
 		FortniteGame::FortBaseWeaponStats::ReloadTime = 0xFC;
 		FortniteGame::BuildingContainer::bAlreadySearched = 0xC91;
-
-
 
 
 		return TRUE;
