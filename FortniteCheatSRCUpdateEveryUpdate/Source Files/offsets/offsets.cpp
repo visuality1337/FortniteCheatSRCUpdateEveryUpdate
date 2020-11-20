@@ -169,7 +169,7 @@ namespace Offsets {
 		FortniteGame::FortPawn::bIsDBNO = 0x552;
 		FortniteGame::FortPawn::bIsDying = 0x538;
 		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xE88;
-		FortniteGame::FortPickup::PrimaryPickupItemEntry = 0x298;
+		FortniteGame::FortPickup::PrimaryPickupItemEntry = 0x2A8;
 		FortniteGame::FortItemDefinition::DisplayName = 0x70;
 		FortniteGame::FortItemDefinition::Tier = 0x54;
 		FortniteGame::FortItemEntry::ItemDefinition = 0x18;
@@ -178,7 +178,7 @@ namespace Offsets {
 		FortniteGame::FortWeaponItemDefinition::WeaponStatHandle = 0x7D8;
 		FortniteGame::FortProjectileAthena::FireStartLoc = 0x878;
 		FortniteGame::FortBaseWeaponStats::ReloadTime = 0xFC;
-		FortniteGame::BuildingContainer::bAlreadySearched = 0xC91;
+		FortniteGame::BuildingContainer::bAlreadySearched = 0xC71;
 
 
 		return TRUE;
