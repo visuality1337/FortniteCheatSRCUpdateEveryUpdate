@@ -1,6 +1,3 @@
-# i updated offsets to last patch
-: )
-
 # Are you allowed to Publish it?
 I allow to publish but with credits. 
 No CREDITS = GAY CLOWN
