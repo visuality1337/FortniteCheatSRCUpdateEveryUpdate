@@ -207,8 +207,6 @@ VOID EndScene(ImGuiWindow& window) {
 					ToggleButton("Silent", &config_system.item.SilentAimbot);
 					ImGui::Text("Trigger Aimbot");
 					ToggleButton("Trigger", &config_system.item.TriggerAimbot);
-					ImGui::Text("No Spread");
-					ToggleButton("Spread", &config_system.item.NoSpreadAimbot);
 				}
 				const char* Points[] = { " Head", " Chest", " Pelvis" };
 				static int AimPoint = 0;
@@ -229,9 +227,6 @@ VOID EndScene(ImGuiWindow& window) {
 
 			if (ImGui::CollapsingHeader("Misc"))
 			{
-				ImGui::Text("Sniper Bullet TP");
-				ToggleButton("Sniper", &config_system.item.BulletTP);
-
 				ImGui::Text("Spin Bot [CAPSLOCK]");
 				ToggleButton("Spin", &config_system.item.SpinBot);
 
