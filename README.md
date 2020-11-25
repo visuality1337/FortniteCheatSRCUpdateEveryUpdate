@@ -6,6 +6,5 @@ No CREDITS = GAY CLOWN
 A free FortniteCheatSRC. (get updated every update)
 
 # SUPPORT
-No support anymore.
-
+Open GitHub-Issue.
 
