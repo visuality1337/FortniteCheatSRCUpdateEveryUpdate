@@ -1,6 +1,6 @@
 /*
 
-Visual#9999
+Visual#9999, Updated by bunyip24#9999 
 */
 // stb_rect_pack.h - v0.10 - public domain - rectangle packing
 // Sean Barrett 2014

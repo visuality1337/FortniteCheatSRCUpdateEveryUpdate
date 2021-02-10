@@ -1,9 +1,9 @@
 /*
 
-Visual#9999
+Visual#9999, Updated by bunyip24#9999
 */
 
-#include "../../Header Files/includes.h"
+#include "../Header Files/includes.h"
 namespace Offsets {
 	PVOID* uWorld = 0;
 
@@ -46,6 +46,7 @@ namespace Offsets {
 
 		namespace Actor {
 			DWORD RootComponent = 0x130;
+			DWORD CustomTimeDilation = 0x98;
 		}
 
 		namespace Character {
@@ -59,7 +60,7 @@ namespace Offsets {
 
 		namespace StaticMeshComponent {
 			DWORD ComponentToWorld = 0x1C0;
-			DWORD StaticMesh = 0x420;
+			DWORD StaticMesh = 0x480;
 		}
 
 		namespace SkinnedMeshComponent {
@@ -93,6 +94,7 @@ namespace Offsets {
 
 		namespace FortWeapon {
 			DWORD WeaponData = 0x358;
+			DWORD AmmoCount = 0x974;
 		}
 
 		namespace FortHoagieVehicle {
@@ -152,7 +154,6 @@ namespace Offsets {
 			return FALSE;
 		}
 
-
 		Engine::World::Levels = 0x138;
 		Engine::GameInstance::LocalPlayers = 0x38;
 		Engine::World::OwningGameInstance = 0x180;
@@ -164,8 +165,9 @@ namespace Offsets {
 		Engine::Character::Mesh = 0x280;
 		Engine::SceneComponent::RelativeLocation = 0x11C;
 		Engine::SceneComponent::ComponentVelocity = 0x140;
-		Engine::StaticMeshComponent::StaticMesh = 0x478;
+		Engine::StaticMeshComponent::StaticMesh = 0x480;
 		Engine::SkinnedMeshComponent::CachedWorldSpaceBounds = 0x5F8;
+		Engine::Actor::CustomTimeDilation = 0x98;
 		FortniteGame::FortPawn::bIsDBNO = 0x552;
 		FortniteGame::FortPawn::bIsDying = 0x538;
 		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xEB8;
@@ -173,7 +175,7 @@ namespace Offsets {
 		FortniteGame::FortItemDefinition::DisplayName = 0x80;
 		FortniteGame::FortItemDefinition::Tier = 0x64;
 		FortniteGame::FortItemEntry::ItemDefinition = 0x18;
-		FortniteGame::FortPawn::CurrentWeapon = 0x5C0;
+		FortniteGame::FortPawn::CurrentWeapon = 0x5D0;
 		FortniteGame::FortWeapon::WeaponData = 0x378;
 		FortniteGame::FortWeaponItemDefinition::WeaponStatHandle = 0x7E8;
 		FortniteGame::FortProjectileAthena::FireStartLoc = 0x878;
