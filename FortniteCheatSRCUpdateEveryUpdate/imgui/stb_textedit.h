@@ -1,6 +1,6 @@
 /*
 
-Visual#9999
+Visual#9999, Updated by bunyip24#9999 
 */
 // [ImGui] this is a slightly modified version of stb_truetype.h 1.9. Those changes would need to be pushed into nothings/sb
 // [ImGui] - fixed linestart handler when over last character of multi-line buffer + simplified existing code (#588, #815)
