@@ -302,7 +302,7 @@ namespace Util {
 	BOOLEAN Initialize() {
 		auto addr = FindPattern("\x48\x8B\x05\x4D\x62\xE7\x05\x48\x8B\x0C\xC8", "xxx????xxxx");
 		if (!addr) {
-			MessageBox(0, L"wrong GOjects", L"Failure", 0);
+			MessageBox(0, L"wrong GOjects.", L"github.com/visual9999", 0);
 			return FALSE;
 		}
 
@@ -313,7 +313,7 @@ namespace Util {
 
 		addr = FindPattern("\x40\x53\x48\x83\xEC\x20\x48\x8B\xD9\x48\x85\xD2\x75\x45\x33\xC0\x48\x89\x01\x48\x89\x41\x08\x8D\x50\x05\xE8\x00\x00\x00\x00\x8B\x53\x08\x8D\x42\x05\x89\x43\x08\x3B\x43\x0C\x7E\x08\x48\x8B\xCB\xE8\x00\x00\x00\x00\x48\x8B\x0B\x48\x8D\x15\x00\x00\x00\x00\x41\xB8\x00\x00\x00\x00\xE8\x00\x00\x00\x00\x48\x8B\xC3\x48\x83\xC4\x20\x5B\xC3\x48\x8B\x42\x18", "xxxxxxxxxxxxxxxxxxxxxxxxxxx????xxxxxxxxxxxxxxxxxx????xxxxxx????xx????x????xxxxxxxxxxxxx");
 		if (!addr) {
-			MessageBox(0, L"Failed to find GetObjectNameInternal", L"Failure", 0);
+			MessageBox(0, L"Failed to find GetObjectNameInternal.", L"github.com/visual9999", 0);
 			return FALSE;
 		}
 
@@ -321,7 +321,7 @@ namespace Util {
 
 		addr = FindPattern("\x48\x85\xC9\x74\x2E\x53\x48\x83\xEC\x20\x48\x8B\xD9\x48\x8B\x0D\x00\x00\x00\x00\x48\x85\xC9\x75\x0C", "xxxxxxxxxxxxxxxx????xxxxx");
 		if (!addr) {
-			MessageBox(0, L"Failed to find FreeInternal", L"Failure", 0);
+			MessageBox(0, L"Failed to find FreeInternal.", L"github.com/visual9999", 0);
 			return FALSE;
 		}
 
@@ -329,7 +329,7 @@ namespace Util {
 
 		addr = FindPattern("\x45\x0F\x57\xC0\x45\x8B\x81\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", "xxxxxxx????????????");
 		if (!addr) {
-			MessageBox(0, L"CalculateProjectionMatrixGivenView Not Found", L"Failure", 0);
+			MessageBox(0, L"Failed to find ProjectionMatrixGivenView.", L"github.com/visual9999", 0);
 			return FALSE;
 		}
 
@@ -337,7 +337,7 @@ namespace Util {
 		DISCORD.HookFunction((uintptr_t)addr, (uintptr_t)CalculateProjectionMatrixGivenViewHook, (uintptr_t)&CalculateProjectionMatrixGivenView);
 		addr = FindPattern("\x40\x55\x53\x56\x57\x48\x8D\x6C\x24\x00\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x45\xE0\x49", "xxxxxxxxx?xxx????xxx????xxxxxxxx");
 		if (!addr) {
-			MessageBox(0, L"Failed to find LineOfSightTo", L"Failure", 0);
+			MessageBox(0, L"Failed to find LineOfSightTo.", L"github.com/visual9999", 0);
 			return FALSE;
 		}
 
