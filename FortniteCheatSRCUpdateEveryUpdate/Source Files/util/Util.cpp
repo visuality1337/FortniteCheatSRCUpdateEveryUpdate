@@ -300,9 +300,9 @@ namespace Util {
 	}
 
 	BOOLEAN Initialize() {
-		auto addr = FindPattern("\x48\x8B\x05\x4D\x62\xE7\x05\x48\x8B\x0C\xC8", "xxx????xxxx");
+		auto addr = FindPattern("\x48\x89\x05\x00\x00\x00\x00\xE8\x00\x00\x00\x00\x40\x84\xF6", "xxx????x????xxx");
 		if (!addr) {
-			MessageBox(0, L"wrong GOjects.", L"github.com/visual9999", 0);
+			MessageBox(0, L"Failed to find GOjects.", L"github.com/visual9999", 0);
 			return FALSE;
 		}
 
