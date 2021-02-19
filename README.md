@@ -3,6 +3,9 @@ What is FortniteCheatSRCUpdateEveryUpdate?
 
 A Forntite cheat source code, that will be updated every fortnite update.
 
+# Visual Studio
+Release x64
+
 # SUPPORT
 
 bunyip24#9999 and 
