@@ -1,13 +1,11 @@
 # need to fix
-
-
 Imgui (some people cant turn off silent)
 issue should be fixed.
 
 # Updated to 15.40
 What is FortniteCheatSRCUpdateEveryUpdate?
 
-A Forntite cheat source code, that will be updated every fortnite update.
+A Fortnite cheat source code, that will be updated every fortnite update.
 
 # Visual Studio 2019
 Release x64
