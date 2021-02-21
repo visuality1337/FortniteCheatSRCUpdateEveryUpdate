@@ -201,13 +201,10 @@ VOID EndScene(ImGuiWindow& window) {
 			{
 				ImGui::Text("Memory");
 				ToggleButton("Memory", &config_system.item.Aimbot);
-				if (config_system.item.Aimbot)
-				{
-					ImGui::Text("Silent Aimbot");
-					ToggleButton("Silent", &config_system.item.SilentAimbot);
-					ImGui::Text("Trigger Aimbot");
-					ToggleButton("Trigger", &config_system.item.TriggerAimbot);
-				}
+				ImGui::Text("Silent Aimbot");
+				ToggleButton("Silent", &config_system.item.SilentAimbot);
+				ImGui::Text("Trigger Aimbot");
+				ToggleButton("Trigger", &config_system.item.TriggerAimbot);
 				const char* Points[] = { " Head", " Chest", " Pelvis" };
 				static int AimPoint = 0;
 				ImGui::Combo("Aim Point", &AimPoint, Points, IM_ARRAYSIZE(Points));
