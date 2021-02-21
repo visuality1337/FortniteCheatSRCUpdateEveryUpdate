@@ -11,6 +11,5 @@ Use smap.exe to inject and a working mapper.
 I will upload a release soon...
 
 # SUPPORT
-
 bunyip24#9999 and 
 Visual#9999
