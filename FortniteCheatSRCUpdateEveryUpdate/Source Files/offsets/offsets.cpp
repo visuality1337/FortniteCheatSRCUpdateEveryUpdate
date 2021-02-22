@@ -170,7 +170,7 @@ namespace Offsets {
 		Engine::Actor::CustomTimeDilation = 0x98;
 		FortniteGame::FortPawn::bIsDBNO = 0x552;
 		FortniteGame::FortPawn::bIsDying = 0x538;
-		FortniteGame::FortPlayerStateAthena::TeamIndex = 0x0EC0;
+		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xEC0;
 		FortniteGame::FortPickup::PrimaryPickupItemEntry = 0x2A8;
 		FortniteGame::FortItemDefinition::DisplayName = 0x80;
 		FortniteGame::FortItemDefinition::Tier = 0x64;
