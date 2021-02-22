@@ -1,6 +1,5 @@
 # need to fix
-Imgui (some people cant turn off silent)
-issue should be fixed.
+Silent and Memory
 
 # Updated to 15.40
 What is FortniteCheatSRCUpdateEveryUpdate?
