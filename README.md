@@ -10,8 +10,9 @@ A Fortnite cheat source code, that will be updated every fortnite update.
 Release x64
 
 # Inject
-Use smap.exe to inject and a working mapper.
-I will upload a release soon...
+I uploaded a release.
+Run d.bat without admin.
+Run inject.bat without admin make sure your fortnite is open.
 
 # SUPPORT
 bunyip24#9999 and 
