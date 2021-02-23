@@ -1,5 +1,5 @@
 # Coming soon...
-Some ud exploids.
+Some ud exploits.
 
 # Updated to 15.40
 What is FortniteCheatSRCUpdateEveryUpdate?
