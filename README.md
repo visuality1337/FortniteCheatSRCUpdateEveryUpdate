@@ -1,5 +1,5 @@
-# need to fix
-Silent and Memory
+# Coming soon...
+Some ud exploids.
 
 # Updated to 15.40
 What is FortniteCheatSRCUpdateEveryUpdate?
