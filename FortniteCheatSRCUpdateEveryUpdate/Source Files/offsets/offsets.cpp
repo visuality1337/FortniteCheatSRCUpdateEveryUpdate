@@ -180,7 +180,7 @@ namespace Offsets {
 		FortniteGame::FortWeaponItemDefinition::WeaponStatHandle = 0x810;
 		FortniteGame::FortProjectileAthena::FireStartLoc = 0x878;
 		FortniteGame::FortBaseWeaponStats::ReloadTime = 0xFC;
-		FortniteGame::BuildingContainer::bAlreadySearched = 0xC41;
+		FortniteGame::BuildingContainer::bAlreadySearched = 0xC61;
 
 
 		return TRUE;
