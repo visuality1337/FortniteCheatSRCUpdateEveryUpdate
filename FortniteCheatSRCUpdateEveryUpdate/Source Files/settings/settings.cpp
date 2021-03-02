@@ -48,12 +48,13 @@ namespace SettingsHelper {
 		config_system.item.FreeCam = false;
 		config_system.item.FreeCamSpeed = 1.00f;
 		config_system.item.CheckVisible = false;
-		config_system.item.AimbotFOV = 200.0f;
+		config_system.item.AimbotFOV = 300.0f;
 		config_system.item.AimbotSlow = 0.0f;
 		config_system.item.InstantReload = false;
 		config_system.item.StreamSnipe = false;
 		config_system.item.FOVSlider = true;
-		config_system.item.FOV = 100.0f;
+		config_system.item.FOV = 120.0f;
+		config_system.item.FOV = true;
 		config_system.item.DrawAimbotFOV = true;
 		config_system.item.DrawFilledAimbotFOV = true;
 		config_system.item.CrosshairSize = 0.0f;
