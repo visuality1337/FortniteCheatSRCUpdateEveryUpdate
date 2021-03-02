@@ -166,7 +166,7 @@ namespace Offsets {
 		Engine::SceneComponent::RelativeLocation = 0x11C;
 		Engine::SceneComponent::ComponentVelocity = 0x140;
 		Engine::StaticMeshComponent::StaticMesh = 0x480;
-		Engine::SkinnedMeshComponent::CachedWorldSpaceBounds = 0x5F8;
+		Engine::SkinnedMeshComponent::CachedWorldSpaceBounds = 0x600;
 		Engine::Actor::CustomTimeDilation = 0x98;
 		FortniteGame::FortPawn::bIsDBNO = 0x552;
 		FortniteGame::FortPawn::bIsDying = 0x538;
@@ -177,7 +177,7 @@ namespace Offsets {
 		FortniteGame::FortItemEntry::ItemDefinition = 0x18;
 		FortniteGame::FortPawn::CurrentWeapon = 0x5D0;
 		FortniteGame::FortWeapon::WeaponData = 0x378;
-		FortniteGame::FortWeaponItemDefinition::WeaponStatHandle = 0x810;
+		FortniteGame::FortWeaponItemDefinition::WeaponStatHandle = 0x820;
 		FortniteGame::FortProjectileAthena::FireStartLoc = 0x878;
 		FortniteGame::FortBaseWeaponStats::ReloadTime = 0xFC;
 		FortniteGame::BuildingContainer::bAlreadySearched = 0xC61;
