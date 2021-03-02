@@ -1,5 +1,5 @@
-# Coming soon...
-Some ud exploits.
+# Need to fix.
+If you inject the game crashes. (for some user)
 
 # Updated to 15.40
 What is FortniteCheatSRCUpdateEveryUpdate?
