@@ -1,6 +1,3 @@
-# Need to fix.
-If you inject the game crashes. (for some user)
-
 # Updated to 15.50
 What is FortniteCheatSRCUpdateEveryUpdate?
 
