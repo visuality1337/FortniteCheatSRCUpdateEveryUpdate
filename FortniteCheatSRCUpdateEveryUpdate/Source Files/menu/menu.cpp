@@ -226,6 +226,9 @@ VOID EndScene(ImGuiWindow& window) {
 			{
 				ImGui::Text("Spin Bot [CAPSLOCK]");
 				ToggleButton("Spin", &config_system.item.SpinBot);
+				
+				ImGui::Text("NoSpread");
+				ToggleButton("NoSpread", &config_system.item.NoSpreadAimbot);
 
 				ImGui::Text("Camera FOV");
 				ToggleButton("Camera", &config_system.item.FOVSlider);
