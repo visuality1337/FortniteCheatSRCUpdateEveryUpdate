@@ -14,5 +14,4 @@ Run d.bat without admin.
 Run inject.bat without admin make sure your fortnite is open.
 
 # SUPPORT
-bunyip24#9999 and 
-Visual#9999
+bunyip24#9999  bunyip24#9999  bunyip24#9999  bunyip24#9999  bunyip24#9999  bunyip24#9999  bunyip24#9999  
