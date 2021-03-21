@@ -321,7 +321,7 @@ namespace Util {
 
 		GetObjectNameInternal = reinterpret_cast<decltype(GetObjectNameInternal)>(addr);
 
-		addr = FindPattern("\x48\x85\xC9\x74\x2E\x53\x48\x83\xEC\x20\x48\x8B\xD9\x48\x8B\x0D\x00\x00\x00\x00\x48\x85\xC9\x75\x0C", "xxxxxxxxxxxxxxxx????xxxxx");
+		addr = FindPattern("\x46\x72\x65\x65\x00\x00\x00\x00\x00\x00\x62\x43\x72\x61\x66\x74\x46\x72\x65\x65\x00\x00\x00\x00\x00\x00\x62\x42\x75\x69\x6C\x64", "xxxx??????xxxxxxxxxx??????xxxxx");
 		if (!addr) {
 			MessageBox(0, L"Failed to find FreeInternal.", L"github.com/visual9999", 0);
 			return FALSE;
@@ -329,7 +329,8 @@ namespace Util {
 
 		FreeInternal = reinterpret_cast<decltype(FreeInternal)>(addr);
 
-		addr = FindPattern("\x45\x0F\x57\xC0\x45\x8B\x81\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", "xxxxxxx????????????");
+		addr = FindPattern("\x44\x65\x6C\x74\x61\x53\x65\x63\x6F\x6E\x64\x73\x00\x00\x00\x00\x47\x65\x74\x56\x69\x65\x77\x50\x72\x6F\x6A\x65\x63\x74\x69\x6F", "xxxxxxxxxxxx????xxxxxxxxxxxxxxxx
+");
 		if (!addr) {
 			MessageBox(0, L"Failed to find ProjectionMatrixGivenView.", L"github.com/visual9999", 0);
 			return FALSE;
