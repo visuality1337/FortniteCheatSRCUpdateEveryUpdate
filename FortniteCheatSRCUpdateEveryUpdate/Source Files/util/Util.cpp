@@ -300,16 +300,9 @@ namespace Util {
 	}
 
 	BOOLEAN Initialize() {
-		auto addr = FindPattern("\x48\x89\x05\x00\x00\x00\x00\xE8\x00\x00\x00\x00\x40\x84\xF6", "xxx????x????xxx");
-		if (!addr) {
-			MessageBox(0, L"Failed to find GOjects.", L"github.com/visual9999", 0);
-			return FALSE;
-		}
-
-
-		objects = reinterpret_cast<decltype(objects)>(RELATIVE_ADDR(addr, 7));
-
-
+		
+		// x48\x89\x05\x00\x00\x00\x00\xE8\x00\x00\x00\x00\x40\x84\xF6
+		// xxx????x????xxx
 
 		addr = FindPattern("\x47\x65\x74\x4F\x75\x74\x65\x72\x4F\x62\x6A\x65\x63\x74\x00\x00\x47\x65\x74\x4F\x62\x6A\x65\x63\x74\x4E\x61\x6D\x65\x00\x00\x00", "xxxxxxxxxxxxxx??xxxxxxxxxxxxx???");
 		if (!addr) {
