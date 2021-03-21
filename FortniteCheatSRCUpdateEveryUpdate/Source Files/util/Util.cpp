@@ -337,7 +337,7 @@ namespace Util {
 
 		addr -= 0x280;
 		DISCORD.HookFunction((uintptr_t)addr, (uintptr_t)CalculateProjectionMatrixGivenViewHook, (uintptr_t)&CalculateProjectionMatrixGivenView);
-		addr = FindPattern("\x40\x55\x53\x56\x57\x48\x8D\x6C\x24\x00\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x45\xE0\x49", "xxxxxxxxx?xxx????xxx????xxxxxxxx");
+		addr = FindPattern("\x7F\x00\x00\x43\x68\x65\x63\x6B\x4C\x69\x6E\x65\x4F\x66\x53\x69\x67\x68\x74\x54\x6F\x41\x63\x74", "x??xxxxxxxxxxxxxxxxxxxxx");
 		if (!addr) {
 			MessageBox(0, L"Failed to find LineOfSightTo.", L"github.com/visual9999", 0);
 			return FALSE;
