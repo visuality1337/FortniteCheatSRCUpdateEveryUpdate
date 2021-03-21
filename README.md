@@ -12,4 +12,4 @@ Run d.bat without admin.
 Run inject.bat without admin make sure your fortnite is open.
 
 # SUPPORT
-bunyip#9999 - Visual#9999 (HOT VISUAL A GUY STOLEN MY NAME)
+bunyip#9999 - Visual#9999 (HOT VISUAL A GUY STOLEN MY NAME) - 381624352866828288 he stolen my name go and dm him
