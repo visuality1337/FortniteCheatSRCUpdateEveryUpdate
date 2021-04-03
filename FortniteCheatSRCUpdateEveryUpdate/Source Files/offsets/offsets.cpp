@@ -165,12 +165,12 @@ namespace Offsets {
 		Engine::Character::Mesh = 0x280;
 		Engine::SceneComponent::RelativeLocation = 0x11C;
 		Engine::SceneComponent::ComponentVelocity = 0x140;
-		Engine::StaticMeshComponent::StaticMesh = 0x480;
+		Engine::StaticMeshComponent::StaticMesh = 0x4A8;
 		Engine::SkinnedMeshComponent::CachedWorldSpaceBounds = 0x600;
 		Engine::Actor::CustomTimeDilation = 0x98;
 		FortniteGame::FortPawn::bIsDBNO = 0x552;
 		FortniteGame::FortPawn::bIsDying = 0x538;
-		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xEC0;
+		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xED0;
 		FortniteGame::FortPickup::PrimaryPickupItemEntry = 0x2A8;
 		FortniteGame::FortItemDefinition::DisplayName = 0x80;
 		FortniteGame::FortItemDefinition::Tier = 0x64;
