@@ -44,8 +44,8 @@ namespace Core {
 			return FALSE;
 		}
 
-		auto bones = ReadPointer(mesh, 0x480);
-		if (!bones) bones = ReadPointer(mesh, 0x480 + 0x10);
+		auto bones = ReadPointer(mesh, 0x4A8);
+		if (!bones) bones = ReadPointer(mesh, 0x4A8 + 0x10);
 		if (!bones) {
 			return FALSE;
 		}
