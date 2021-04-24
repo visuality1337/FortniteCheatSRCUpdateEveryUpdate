@@ -13,4 +13,4 @@ Run inject.bat without admin make sure your fortnite is open.) i will reupload s
 
 
 # SUPPORT
-bunyip#9999 - Visual#1337
+bunyip#9999 - Visual#9999
