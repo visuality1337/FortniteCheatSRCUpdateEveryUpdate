@@ -8,9 +8,7 @@ A Fortnite cheat source code, that will be updated every fortnite update.
 Release x64
 
 # Inject
-(I uploaded a release.
-Run d.bat without admin.
-Run inject.bat without admin make sure your fortnite is open.) i will reupload soon..
+Release deleted, cuz injector and driver detected, i will upload new one if the cheat is updated.
 
 
 # SUPPORT
