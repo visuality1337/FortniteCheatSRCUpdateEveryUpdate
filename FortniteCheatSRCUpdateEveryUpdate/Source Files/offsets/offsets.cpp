@@ -165,22 +165,22 @@ namespace Offsets {
 		Engine::Character::Mesh = 0x280;
 		Engine::SceneComponent::RelativeLocation = 0x11C;
 		Engine::SceneComponent::ComponentVelocity = 0x140;
-		Engine::StaticMeshComponent::StaticMesh = 0x4A8;
+		Engine::StaticMeshComponent::StaticMesh = 0x480;
 		Engine::SkinnedMeshComponent::CachedWorldSpaceBounds = 0x600;
 		Engine::Actor::CustomTimeDilation = 0x98;
-		FortniteGame::FortPawn::bIsDBNO = 0x552;
-		FortniteGame::FortPawn::bIsDying = 0x538;
+		FortniteGame::FortPawn::bIsDBNO = 0x56E;
+		FortniteGame::FortPawn::bIsDying = 0x540;
 		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xED0;
 		FortniteGame::FortPickup::PrimaryPickupItemEntry = 0x2A8;
-		FortniteGame::FortItemDefinition::DisplayName = 0x80;
-		FortniteGame::FortItemDefinition::Tier = 0x64;
+		FortniteGame::FortItemDefinition::DisplayName = 0x88;
+		FortniteGame::FortItemDefinition::Tier = 0x6C;
 		FortniteGame::FortItemEntry::ItemDefinition = 0x18;
-		FortniteGame::FortPawn::CurrentWeapon = 0x5D0;
+		FortniteGame::FortPawn::CurrentWeapon = 0x5F0;
 		FortniteGame::FortWeapon::WeaponData = 0x378;
 		FortniteGame::FortWeaponItemDefinition::WeaponStatHandle = 0x820;
 		FortniteGame::FortProjectileAthena::FireStartLoc = 0x878;
 		FortniteGame::FortBaseWeaponStats::ReloadTime = 0xFC;
-		FortniteGame::BuildingContainer::bAlreadySearched = 0xC61;
+		FortniteGame::BuildingContainer::bAlreadySearched = 0xC81;
 
 
 		return TRUE;
