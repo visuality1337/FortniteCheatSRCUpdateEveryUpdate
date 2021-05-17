@@ -1,4 +1,3 @@
-# NOT WORKING ATM
 # Updated to 16.40 - OFFSETS MAYBE WRONG
 What is FortniteCheatSRCUpdateEveryUpdate?
 
