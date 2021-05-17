@@ -1,5 +1,5 @@
 # NOT WORKING ATM
-# Updated to 16.10 - OFFSETS MAYBE WRONG
+# Updated to 16.40 - OFFSETS MAYBE WRONG
 What is FortniteCheatSRCUpdateEveryUpdate?
 
 A Fortnite cheat source code, that will be updated every fortnite update.
@@ -12,4 +12,4 @@ Release deleted, cuz injector and driver detected, i will upload new one if the 
 
 
 # SUPPORT
-bunyip#9999 - Visual#9999
+no support atm.
