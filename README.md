@@ -1,5 +1,5 @@
 # NOT WORKING ATM
-# Updated to 16.10 - SIGS ARE WRONG
+# Updated to 16.10 - OFFSETS MAYBE WRONG
 What is FortniteCheatSRCUpdateEveryUpdate?
 
 A Fortnite cheat source code, that will be updated every fortnite update.
