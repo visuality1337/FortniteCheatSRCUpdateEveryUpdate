@@ -6,6 +6,8 @@ Visual#9999, Updated by bunyip24#9999
 #include "../../Header Files/Config/config.h"
 #include "../../Header Files/includes.h"
 #include "../../DiscordHook/Discord.h"
+#include "../../Header Files/xorstr.h"
+#include "../../imgui/imgui_xorstr.h"
 #include <iostream>
 
 namespace Core {
@@ -94,7 +96,7 @@ namespace Core {
 
 			do {
 				if (Core::TargetPawn && Core::LocalPlayerController) {
-					if (wcsstr(objectName.c_str(), L"B_Prj_Bullet_Sniper") && funcName == L"OnRep_FireStart") {
+					if (wcsstr(objectName.c_str(), xorstr(L"B_Prj_Bullet_Sniper")) && funcName == xorstr(L"OnRep_FireStart")) {
 						FVector CurrentAimPointer = { 0 };
 						if (!GetTarget(CurrentAimPointer)) {
 							break;
@@ -106,7 +108,7 @@ namespace Core {
 						*reinterpret_cast<FVector*>(root + Offsets::Engine::SceneComponent::RelativeLocation) = CurrentAimPointer;
 						memset(root + Offsets::Engine::SceneComponent::ComponentVelocity, 0, sizeof(FVector));
 					}
-					else if (!config_system.item.SilentAimbot && wcsstr(funcName.c_str(), L"Tick")) {
+					else if (!config_system.item.SilentAimbot && wcsstr(funcName.c_str(), xorstr(L"Tick"))) {
 						FVector CurrentAimPointer;
 						if (!GetTarget(CurrentAimPointer)) { //head
 							break;
@@ -280,7 +282,7 @@ namespace Core {
 	{
 		static HWND TargetWindow = 0;
 		float CurrentSpeed = config_system.item.FreeCamSpeed;
-		TargetWindow = FindWindow((L"UnrealWindow"), (L"Fortnite  "));
+		TargetWindow = FindWindow(xorstr(L"UnrealWindow"), xorstr(L"Fortnite  "));
 
 
 		auto RotationYaw = viewInfo->Rotation.Yaw * PI / 180.0f;
@@ -362,36 +364,36 @@ namespace Core {
 	BOOLEAN Initialize() {
 
 		// GetWeaponStats
-		auto addr = Util::FindPattern("\x48\x83\xEC\x58\x48\x8B\x91\x00\x00\x00\x00\x48\x85\xD2\x0F\x84\x00\x00\x00\x00\xF6\x81\x00\x00\x00\x00\x00\x74\x10\x48\x8B\x81\x00\x00\x00\x00\x48\x85\xC0\x0F\x85\x00\x00\x00\x00\x48\x8B\x8A\x00\x00\x00\x00\x48\x89\x5C\x24\x00\x48\x8D\x9A\x00\x00\x00\x00\x48\x85\xC9", "xxxxxxx????xxxxx????xx?????xxxxx????xxxxx????xxx????xxxx?xxx????xxx");
+		auto addr = Util::FindPattern(xorstr("\x48\x83\xEC\x58\x48\x8B\x91\x00\x00\x00\x00\x48\x85\xD2\x0F\x84\x00\x00\x00\x00\xF6\x81\x00\x00\x00\x00\x00\x74\x10\x48\x8B\x81\x00\x00\x00\x00\x48\x85\xC0\x0F\x85\x00\x00\x00\x00\x48\x8B\x8A\x00\x00\x00\x00\x48\x89\x5C\x24\x00\x48\x8D\x9A\x00\x00\x00\x00\x48\x85\xC9"), xorstr("xxxxxxx????xxxxx????xx?????xxxxx????xxxxx????xxx????xxxx?xxx????xxx"));
 		if (!addr) {
-			MessageBox(0, L"Failed to find GetWeaponStats.", L"github.com/visual9999", 0);
+			MessageBox(0, xorstr(L"Failed to find GetWeaponStats."), xorstr(L"github.com/visual9999"), 0);
 			return FALSE;
 		}
 
 		GetWeaponStats = reinterpret_cast<decltype(GetWeaponStats)>(addr);
 
 		// ProcessEvent
-		addr = Util::FindPattern("\x40\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x81\xEC\x00\x00\x00\x00\x48\x8D\x6C\x24\x00\x48\x89\x9D\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC5\x48\x89\x85\x00\x00\x00\x00\x8B\x41\x0C\x45\x33\xF6\x3B\x05\x00\x00\x00\x00\x4D\x8B\xF8\x48\x8B\xF2\x4C\x8B\xE1\x41\xB8\x00\x00\x00\x00\x7D\x2A", "xxxxxxxxxxxxxxx????xxxx?xxx????xxx????xxxxxx????xxxxxxxx????xxxxxxxxxxx????xx");
+		addr = Util::FindPattern(xorstr("\x40\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x81\xEC\x00\x00\x00\x00\x48\x8D\x6C\x24\x00\x48\x89\x9D\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC5\x48\x89\x85\x00\x00\x00\x00\x8B\x41\x0C\x45\x33\xF6\x3B\x05\x00\x00\x00\x00\x4D\x8B\xF8\x48\x8B\xF2\x4C\x8B\xE1\x41\xB8\x00\x00\x00\x00\x7D\x2A"), xorstr("xxxxxxxxxxxxxxx????xxxx?xxx????xxx????xxxxxx????xxxxxxxx????xxxxxxxxxxx????xx"));
 		if (!addr) {
-			MessageBox(0, L"Failed to find ProcessEvent.", L"github.com/visual9999", 0);
+			MessageBox(0, xorstr(L"Failed to find ProcessEvent."), xorstr(L"github.com/visual9999"), 0);
 			return FALSE;
 		}
 
 		DISCORD.HookFunction((uintptr_t)addr, (uintptr_t)ProcessEventHook, (uintptr_t)&ProcessEvent);;
 
 		//CalculateShot
-		addr = Util::FindPattern("\x48\x89\x5C\x24\x00\x4C\x89\x4C\x24\x00\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\x6C\x24\x00\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\xF9\x4C\x8D\x6C\x24\x00", "xxxx?xxxx?xxxxxxxxxxxxxxx?xxx????xxxxxxx?");
+		addr = Util::FindPattern(xorstr("\x48\x89\x5C\x24\x00\x4C\x89\x4C\x24\x00\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\x6C\x24\x00\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\xF9\x4C\x8D\x6C\x24\x00"), xorstr("xxxx?xxxx?xxxxxxxxxxxxxxx?xxx????xxxxxxx?"));
 		if (!addr) {
-			MessageBox(0, L"Failed to find CalculateShot.", L"github.com/visual9999", 0);
+			MessageBox(0, xorstr(L"Failed to find CalculateShot."), xorstr(L"github.com/visual9999"), 0);
 			return FALSE;
 		}
 
 		DISCORD.HookFunction((uintptr_t)addr, (uintptr_t)CalculateShotHook, (uintptr_t)&CalculateShot);
 
 		// GetViewPoint
-		addr = Util::FindPattern("\x48\x89\x5C\x24\x00\x48\x89\x74\x24\x00\x57\x48\x83\xEC\x20\x48\x8B\xD9\x41\x8B\xF0\x48\x8B\x49\x30\x48\x8B\xFA\xE8\x00\x00\x00\x00\xBA\x00\x00\x00\x00\x48\x8B\xC8", "xxxx?xxxx?xxxxxxxxxxxxxxxxxxx????x????xxx");
+		addr = Util::FindPattern(xorstr("\x48\x89\x5C\x24\x00\x48\x89\x74\x24\x00\x57\x48\x83\xEC\x20\x48\x8B\xD9\x41\x8B\xF0\x48\x8B\x49\x30\x48\x8B\xFA\xE8\x00\x00\x00\x00\xBA\x00\x00\x00\x00\x48\x8B\xC8"), xorstr("xxxx?xxxx?xxxxxxxxxxxxxxxxxxx????x????xxx"));
 		if (!addr) {
-			MessageBox(0, L"Failed to find GetViewPoint.", L"github.com/visual9999", 0);
+			MessageBox(0, xorstr(L"Failed to find GetViewPoint."), xorstr(L"github.com/visual9999"), 0);
 			return FALSE;
 		}
 
@@ -399,9 +401,9 @@ namespace Core {
 
 
 		//CalculateSpread
-		addr = Util::FindPattern("\x83\x79\x78\x00\x4C\x8B\xC9\x75\x0F\x0F\x57\xC0\xC7\x02\x00\x00\x00\x00\xF3\x41\x0F\x11\x00\xC3\x48\x8B\x41\x70\x8B\x48\x04\x89\x0A\x49\x63\x41\x78\x48\x6B\xC8\x1C\x49\x8B\x41\x70\xF3\x0F\x10\x44\x01\x00\xF3\x41\x0F\x11\x00\xC3", "xxxxxxxxxxxxxx????xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?xxxxxx");
+		addr = Util::FindPattern(xorstr("\x83\x79\x78\x00\x4C\x8B\xC9\x75\x0F\x0F\x57\xC0\xC7\x02\x00\x00\x00\x00\xF3\x41\x0F\x11\x00\xC3\x48\x8B\x41\x70\x8B\x48\x04\x89\x0A\x49\x63\x41\x78\x48\x6B\xC8\x1C\x49\x8B\x41\x70\xF3\x0F\x10\x44\x01\x00\xF3\x41\x0F\x11\x00\xC3"), xorstr("xxxxxxxxxxxxxx????xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?xxxxxx"));
 		if (!addr) {
-			MessageBox(0, L"Failed To find CalculateSpread.", L"github.com/visual9999", MB_OK | MB_ICONERROR);
+			MessageBox(0, xorstr(L"Failed To find CalculateSpread."), xorstr(L"github.com/visual9999"), MB_OK | MB_ICONERROR);
 			return FALSE;
 		}
 
