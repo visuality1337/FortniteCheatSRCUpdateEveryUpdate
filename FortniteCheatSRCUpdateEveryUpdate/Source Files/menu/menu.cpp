@@ -8,6 +8,8 @@ Visual#9999, Updated by bunyip24#9999
 #include "../../Header Files/Config/config.h"
 #include "../../DiscordHook/Discord.h"
 #include "../../Helper/Helper.h"
+#include "../../Header Files/xorstr.h"
+#include "../../imgui/imgui_xorstr.h"
 #include <iostream>
 ID3D11Device* device = nullptr;
 ID3D11DeviceContext* immediateContext = nullptr;
@@ -66,7 +68,7 @@ VOID AddMarker(ImGuiWindow& window, float width, float height, float* start, PVO
 			float dist = Util::SpoofCall(sqrtf, dx * dx + dy * dy + dz * dz) / 1000.0f;
 
 			CHAR modified[0xFF] = { 0 };
-			snprintf(modified, sizeof(modified), ("%s\n| %dm |"), text, static_cast<INT>(dist));
+			snprintf(modified, sizeof(modified), xorstr("%s\n| %dm |"), text, static_cast<INT>(dist));
 
 			auto size = ImGui::GetFont()->CalcTextSizeA(window.DrawList->_Data->FontSize, FLT_MAX, 0, modified);
 			window.DrawList->AddText(ImVec2(pos.X - size.x / 2.0f, pos.Y - size.y / 2.0f), color, modified);
@@ -122,7 +124,7 @@ ImGuiWindow& BeginScene() {
 	ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0);
 	ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
 	ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0, 0, 0, 0));
-	ImGui::Begin(("##scene"), nullptr, ImGuiWindowFlags_NoInputs | ImGuiWindowFlags_NoTitleBar);
+	ImGui::Begin(xorstr("##scene"), nullptr, ImGuiWindowFlags_NoInputs | ImGuiWindowFlags_NoTitleBar);
 
 	auto& io = ImGui::GetIO();
 	ImGui::SetWindowPos(ImVec2(0, 0), ImGuiCond_Always);
@@ -192,93 +194,93 @@ VOID EndScene(ImGuiWindow& window) {
 		ImGui::GetStyle().FrameRounding = 4.0f;
 
 
-			ImGui::Begin("github.com/Visual9999", 0, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize); {
+			ImGui::Begin(xorstr("github.com/Visual9999"), 0, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize); {
 			ImGui::SetWindowSize(ImVec2(550, 450), ImGuiCond_FirstUseEver);
 
 			ImVec2 size = ImGui::GetItemRectSize();
 
-			if (ImGui::CollapsingHeader("Aimbot"))
+			if (ImGui::CollapsingHeader(xorstr("Aimbot")))
 			{
-				ImGui::Text("Memory");
-				ToggleButton("Memory", &config_system.item.Aimbot);
-				ImGui::Text("Silent Aimbot");
-				ToggleButton("Silent", &config_system.item.SilentAimbot);
-				ImGui::Text("Trigger Aimbot");
-				ToggleButton("Trigger", &config_system.item.TriggerAimbot);
+				ImGui::Text(xorstr("Memory"));
+				ToggleButton(xorstr("Memory"), &config_system.item.Aimbot);
+				ImGui::Text(xorstr("Silent Aimbot"));
+				ToggleButton(xorstr("Silent"), &config_system.item.SilentAimbot);
+				ImGui::Text(xorstr("Trigger Aimbot"));
+				ToggleButton(xorstr("Trigger"), &config_system.item.TriggerAimbot);
 				const char* Points[] = { " Head", " Chest", " Pelvis" };
 				static int AimPoint = 0;
-				ImGui::Combo("Aim Point", &AimPoint, Points, IM_ARRAYSIZE(Points));
+				ImGui::Combo(xorstr("Aim Point"), &AimPoint, Points, IM_ARRAYSIZE(Points));
 				config_system.item.AimPoint = AimPoint;
 				if (config_system.item.AutoAimbot) {
 					config_system.item.AutoAimbot = 2000.0f;
 				}
-				ImGui::Text("Fov");
-				ToggleButton("Fov", &config_system.item.DrawAimbotFOV);
+				ImGui::Text(xorstr("Fov"));
+				ToggleButton(xorstr("Fov"), &config_system.item.DrawAimbotFOV);
 				if (config_system.item.DrawAimbotFOV)
 				{
-					ImGui::Text("Filled FOV");
-					ToggleButton("Filled", &config_system.item.DrawFilledAimbotFOV);
+					ImGui::Text(xorstr("Filled FOV"));
+					ToggleButton(xorstr("Filled"), &config_system.item.DrawFilledAimbotFOV);
 				}
-				ImGui::SliderFloat(("Circle FOV"), &config_system.item.AimbotFOV, 100.0f, 1000.0f);
+				ImGui::SliderFloat(xorstr("Circle FOV"), &config_system.item.AimbotFOV, 100.0f, 1000.0f);
 			}
 
-			if (ImGui::CollapsingHeader("Misc"))
+			if (ImGui::CollapsingHeader(xorstr("Misc")))
 			{
-				ImGui::Text("Spin Bot [CAPSLOCK]");
-				ToggleButton("Spin", &config_system.item.SpinBot);
+				ImGui::Text(xorstr("Spin Bot [CAPSLOCK]"));
+				ToggleButton(xorstr("Spin"), &config_system.item.SpinBot);
 				
-				ImGui::Text("NoSpread");
-				ToggleButton("NoSpread", &config_system.item.NoSpreadAimbot);
+				ImGui::Text(xorstr("NoSpread"));
+				ToggleButton(xorstr("NoSpread"), &config_system.item.NoSpreadAimbot);
 
-				ImGui::Text("Camera FOV");
-				ToggleButton("Camera", &config_system.item.FOVSlider);
+				ImGui::Text(xorstr("Camera FOV"));
+				ToggleButton(xorstr("Camera"), &config_system.item.FOVSlider);
 
 				if (config_system.item.FOVSlider)
 				{
-					ImGui::SliderFloat(("Camera FOV Slider"), &config_system.item.FOV, 0.0f, 150.0f, ("%.2f"));
+					ImGui::SliderFloat(xorstr("Camera FOV Slider"), &config_system.item.FOV, 0.0f, 150.0f, xorstr("%.2f"));
 				}
-				ImGui::Text("Stream Snipe Player Name");
-				ImGui::InputText("       ", streamsnipena, 256, ImGuiInputTextFlags_EnterReturnsTrue);
+				ImGui::Text(xorstr("Stream Snipe Player Name"));
+				ImGui::InputText(xorstr("       "), streamsnipena, 256, ImGuiInputTextFlags_EnterReturnsTrue);
 			}
 
-			if (ImGui::CollapsingHeader("ESP"))
+			if (ImGui::CollapsingHeader(xorstr("ESP")))
 			{
-				ImGui::Text("Chest ESP");
-				ToggleButton("Chest", &config_system.item.Chest);
-				ImGui::Text("Llama ESP");
-				ToggleButton("Llama", &config_system.item.Llama);
-				ImGui::Text("Ammo ESP");
-				ToggleButton("Ammo", &config_system.item.Ammo);
-				ImGui::Text("Boat ESP");
-				ToggleButton("Boat", &config_system.item.boat);
-				ImGui::Text("Chopper ESP");
-				ToggleButton("Chopper", &config_system.item.chopper);
-				ImGui::Text("Player Names ESP");
-				ToggleButton("Names", &config_system.item.PlayerNames);
-				ImGui::Text("Box ESP");
-				ToggleButton("BOX", &config_system.item.PlayerBox);
-				ImGui::Text("Player Lines");
-				ToggleButton("Lines", &config_system.item.PlayerLines);
-				ImGui::Text("Players Corner");
-				ToggleButton("Corner", &config_system.item.PlayersCorner);
+				ImGui::Text(xorstr("Chest ESP"));
+				ToggleButton(xorstr("Chest"), &config_system.item.Chest);
+				ImGui::Text(xorstr("Llama ESP"));
+				ToggleButton(xorstr("Llama"), &config_system.item.Llama);
+				ImGui::Text(xorstr("Ammo ESP"));
+				ToggleButton(xorstr("Ammo"), &config_system.item.Ammo);
+				ImGui::Text(xorstr("Boat ESP"));
+				ToggleButton(xorstr("Boat"), &config_system.item.boat);
+				ImGui::Text(xorstr("Chopper ESP"));
+				ToggleButton(xorstr("Chopper"), &config_system.item.chopper);
+				ImGui::Text(xorstr("Player Names ESP"));
+				ToggleButton(xorstr("Names"), &config_system.item.PlayerNames);
+				ImGui::Text(xorstr("Box ESP"));
+				ToggleButton(xorstr("BOX"), &config_system.item.PlayerBox);
+				ImGui::Text(xorstr("Player Lines"));
+				ToggleButton(xorstr("Lines"), &config_system.item.PlayerLines);
+				ImGui::Text(xorstr("Players Corner"));
+				ToggleButton(xorstr("Corner"), &config_system.item.PlayersCorner);
 			}
 
-			if (ImGui::CollapsingHeader("Colors"))
+			if (ImGui::CollapsingHeader(xorstr("Colors")))
 			{
 				ImGui::PushItemWidth(100.0f);
-				ImGui::Text("ESP");
+				ImGui::Text(xorstr("ESP"));
 				ImGui::SameLine();
-				ImGui::ColorPicker3(("Box"), config_system.item.BoxESP, ImGuiColorEditFlags_NoInputs);
+				ImGui::ColorPicker3(xorstr("Box"), config_system.item.BoxESP, ImGuiColorEditFlags_NoInputs);
 				ImGui::SameLine();
-				ImGui::ColorPicker3(("Lines"), config_system.item.LineESP, ImGuiColorEditFlags_NoInputs);
+				ImGui::ColorPicker3(xorstr("Lines"), config_system.item.LineESP, ImGuiColorEditFlags_NoInputs);
 				ImGui::SameLine();
-				ImGui::ColorPicker3(("Aim\nFOV"), config_system.item.FOVCircleColor, ImGuiColorEditFlags_NoInputs);
-				ImGui::Text("Skeleton ESP");
-				ImGui::ColorPicker3(("Is\nVisible"), config_system.item.PlayerVisibleColor, ImGuiColorEditFlags_NoInputs);
+				ImGui::ColorPicker3(xorstr("Aim\nFOV"), config_system.item.FOVCircleColor, ImGuiColorEditFlags_NoInputs);
+				ImGui::Text(xorstr("Skeleton ESP"));
+				ImGui::ColorPicker3(xorstr("Is\nVisible"), config_system.item.PlayerVisibleColor, ImGuiColorEditFlags_NoInputs);
 				ImGui::SameLine();
-				ImGui::ColorPicker3(("Not\nVisible"), config_system.item.PlayerNotVisibleColor, ImGuiColorEditFlags_NoInputs);
+				ImGui::ColorPicker3(xorstr("Not\nVisible"), config_system.item.PlayerNotVisibleColor, ImGuiColorEditFlags_NoInputs);
 				ImGui::SameLine();
-				ImGui::ColorPicker3(("Teammates"), config_system.item.PlayerTeammate, ImGuiColorEditFlags_NoInputs);
+				ImGui::ColorPicker3(xorstr("Teammates"), config_system.item.PlayerTeammate, ImGuiColorEditFlags_NoInputs);
 			}
 		}
 		ImGui::End();
@@ -328,7 +330,7 @@ __declspec(dllexport) HRESULT PresentHook(IDXGISwapChain* swapChain, UINT syncIn
 		D3D11_TEXTURE2D_DESC backBufferDesc = { 0 };
 		backBuffer->GetDesc(&backBufferDesc);
 
-		hWnd = FindWindow((L"UnrealWindow"), (L"Fortnite  "));
+		hWnd = FindWindow(xorstr(L"UnrealWindow"), xorstr(L"Fortnite  "));
 		if (!width) {
 			oWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(hWnd, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProcHook)));
 		}
@@ -337,7 +339,7 @@ __declspec(dllexport) HRESULT PresentHook(IDXGISwapChain* swapChain, UINT syncIn
 		height = (float)backBufferDesc.Height;
 		backBuffer->Release();
 
-		ImGui::GetIO().Fonts->AddFontFromFileTTF(("C:\\Windows\\Fonts\\trebucbd.ttf"), 13.0f);
+		ImGui::GetIO().Fonts->AddFontFromFileTTF(xorstr("C:\\Windows\\Fonts\\trebucbd.ttf"), 13.0f); //your font here
 
 		ImGui_ImplDX11_Init(hWnd, device, immediateContext);
 		ImGui_ImplDX11_CreateDeviceObjects();
@@ -382,7 +384,7 @@ __declspec(dllexport) HRESULT PresentHook(IDXGISwapChain* swapChain, UINT syncIn
 		auto localPlayerTeamIndex = ReadDWORD(localPlayerState, Offsets::FortniteGame::FortPlayerStateAthena::TeamIndex);
 
 		auto weaponName = Util::GetObjectFirstName((UObject*)localPlayerWeapon);
-		auto isProjectileWeapon = wcsstr(weaponName.c_str(), L"Rifle_Sniper");
+		auto isProjectileWeapon = wcsstr(weaponName.c_str(), xorstr(L"Rifle_Sniper"));
 
 		Core::LocalPlayerPawn = localPlayerPawn;
 		Core::LocalPlayerController = localPlayerController;
@@ -404,26 +406,26 @@ __declspec(dllexport) HRESULT PresentHook(IDXGISwapChain* swapChain, UINT syncIn
 				if (!pawn || pawn == localPlayerPawn) continue;
 
 				auto name = Util::GetObjectFirstName(pawn);
-				if (wcsstr(name.c_str(), L"PlayerPawn_Athena_C") || wcsstr(name.c_str(), L"PlayerPawn_Athena_Phoebe_C") || wcsstr(name.c_str(), L"BP_MangPlayerPawn") || wcsstr(name.c_str(), L"HoagieVehicle_C")) {
+				if (wcsstr(name.c_str(), xorstr(L"PlayerPawn_Athena_C")) || wcsstr(name.c_str(), xorstr(L"PlayerPawn_Athena_Phoebe_C")) || wcsstr(name.c_str(), xorstr(L"BP_MangPlayerPawn")) || wcsstr(name.c_str(), xorstr(L"HoagieVehicle_C"))) {
 					playerPawns.push_back(pawn);
 				}
 				
-				else if (config_system.item.Llama && wcsstr(name.c_str(), L"AthenaSupplyDrop_Llama")) {
-					AddMarker(window, width, height, localPlayerLocation, pawn, "Llama", ImGui::GetColorU32({ 0.03f, 0.78f, 0.91f, 1.0f }));
+				else if (config_system.item.Llama && wcsstr(name.c_str(), xorstr(L"AthenaSupplyDrop_Llama"))) {
+					AddMarker(window, width, height, localPlayerLocation, pawn, xorstr("Llama"), ImGui::GetColorU32({ 0.03f, 0.78f, 0.91f, 1.0f }));
 				}
-				if (config_system.item.Chest && wcsstr(name.c_str(), L"Tiered_Chest") && !((ReadBYTE(pawn, Offsets::FortniteGame::BuildingContainer::bAlreadySearched) >> 7) & 1)) {
-					AddMarker(window, width, height, localPlayerLocation, pawn, "Chest", ImGui::GetColorU32({ 255,255,0,255 }));
+				if (config_system.item.Chest && wcsstr(name.c_str(), xorstr(L"Tiered_Chest")) && !((ReadBYTE(pawn, Offsets::FortniteGame::BuildingContainer::bAlreadySearched) >> 7) & 1)) {
+					AddMarker(window, width, height, localPlayerLocation, pawn, xorstr("Chest"), ImGui::GetColorU32({ 255,255,0,255 }));
 				}
-				else if (config_system.item.Ammo && wcsstr(name.c_str(), L"Tiered_Ammo") && !((ReadBYTE(pawn, Offsets::FortniteGame::BuildingContainer::bAlreadySearched) >> 7) & 1)) {
-					AddMarker(window, width, height, localPlayerLocation, pawn, "Ammo Box", ImGui::GetColorU32({ 0.75f, 0.75f, 0.75f, 1.0f }));
+				else if (config_system.item.Ammo && wcsstr(name.c_str(), xorstr(L"Tiered_Ammo")) && !((ReadBYTE(pawn, Offsets::FortniteGame::BuildingContainer::bAlreadySearched) >> 7) & 1)) {
+					AddMarker(window, width, height, localPlayerLocation, pawn, xorstr("Ammo Box"), ImGui::GetColorU32({ 0.75f, 0.75f, 0.75f, 1.0f }));
 				}
-				else if (config_system.item.chopper && wcsstr(name.c_str(), L"HoagieVehicle_C")) {
+				else if (config_system.item.chopper && wcsstr(name.c_str(), xorstr(L"HoagieVehicle_C"))) {
 
-					AddMarker(window, width, height, localPlayerLocation, pawn, "Chopper", ImGui::GetColorU32({ 1.0f, 0.0f, 0.0f, 1.0f }));
+					AddMarker(window, width, height, localPlayerLocation, pawn, xorstr("Chopper"), ImGui::GetColorU32({ 1.0f, 0.0f, 0.0f, 1.0f }));
 				}
-				else if (config_system.item.boat && wcsstr(name.c_str(), L"MeatballVehicle_L")) {
+				else if (config_system.item.boat && wcsstr(name.c_str(), xorstr(L"MeatballVehicle_L"))) {
 
-					AddMarker(window, width, height, localPlayerLocation, pawn, "Boat", ImGui::GetColorU32({ 1.0f, 0.0f, 0.0f, 1.0f }));
+					AddMarker(window, width, height, localPlayerLocation, pawn, xorstr("Boat"), ImGui::GetColorU32({ 1.0f, 0.0f, 0.0f, 1.0f }));
 				}
 			}
 		}
@@ -735,7 +737,7 @@ __declspec(dllexport) HRESULT PresentHook(IDXGISwapChain* swapChain, UINT syncIn
 						CHAR lel[0xFF] = { 0 };
 						wcstombs(lel, playerName.c_str(), sizeof(lel));
 						Util::FreeInternal(playerName.c_str());
-						snprintf(copy, sizeof(copy), ("%s [%dm]"), lel, static_cast<INT>(dist));
+						snprintf(copy, sizeof(copy), xorstr("%s [%dm]"), lel, static_cast<INT>(dist));
 						auto centerTop = ImVec2((topLeft.x + bottomRight.x) / 2.0f, topLeft.y);
 						auto size = ImGui::GetFont()->CalcTextSizeA(window.DrawList->_Data->FontSize, FLT_MAX, 0, copy);
 						//	window.DrawList->AddRectFilled(ImVec2(centerTop.x - size.x / 2.0f, centerTop.y - size.y + 3.0f), ImVec2(centerTop.x + size.x / 2.0f, centerTop.y), ImGui::GetColorU32({ 0.0f, 0.0f, 0.0f, 0.4f }));
@@ -873,12 +875,12 @@ bool Render::Initialize() {
 	sd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
 	sd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
 	sd.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;
-	sd.OutputWindow = FindWindow((L"UnrealWindow"), (L"Fortnite  "));
+	sd.OutputWindow = FindWindow(xorstr(L"UnrealWindow"), xorstr(L"Fortnite  "));
 	sd.SampleDesc.Count = 1;
 	sd.Windowed = TRUE;
 
 	if (FAILED(D3D11CreateDeviceAndSwapChain(nullptr, D3D_DRIVER_TYPE_HARDWARE, 0, 0, &featureLevel, 1, D3D11_SDK_VERSION, &sd, &swapChain, &device, nullptr, &context))) {
-		MessageBox(0, L"Critical error have happened\nPlease contact an admin with the error code:\n0x0001b", L"Error", MB_ICONERROR);
+		MessageBox(0, xorstr(L"Critical error have happened\nPlease contact an admin with the error code:\n0x0001b"), xorstr(L"Error"), MB_ICONERROR);
 		return FALSE;
 	}
 
@@ -890,9 +892,9 @@ bool Render::Initialize() {
 	device->Release();
 	swapChain->Release();
 
-	const auto pcall_present_discord = Helper::PatternScan(Discord::GetDiscordModuleBase(), "FF 15 ? ? ? ? 8B D8 E8 ? ? ? ? E8 ? ? ? ? EB 10");
+	const auto pcall_present_discord = Helper::PatternScan(Discord::GetDiscordModuleBase(), xorstr("FF 15 ? ? ? ? 8B D8 E8 ? ? ? ? E8 ? ? ? ? EB 10"));
 	auto presentSceneAdress = Helper::PatternScan(Discord::GetDiscordModuleBase(),
-		"56 57 53 48 83 EC 30 44 89 C6");
+		xorstr("56 57 53 48 83 EC 30 44 89 C6"));
 
 	DISCORD.HookFunction(presentSceneAdress, (uintptr_t)PresentHook, (uintptr_t)&PresentOriginal);
 
