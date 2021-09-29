@@ -1,6 +1,6 @@
 ### THIS REP IS NOT SUPPORTED ANYMORE
 
-# Updated to 16.40 - OFFSETS MAYBE WRONG
+# Updated to 16.30
 What is FortniteCheatSRCUpdateEveryUpdate?
 
 A Fortnite cheat source code, that will be updated every fortnite update.
