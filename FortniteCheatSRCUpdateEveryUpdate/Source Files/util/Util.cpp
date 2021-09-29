@@ -6,6 +6,8 @@ Visual#9999, Updated by bunyip24#9999, sigs fixed by homeless1337-
 
 #include "../../Header Files/includes.h"
 #include "../../DiscordHook/Discord.h"
+#include "../../Header Files/xorstr.h"
+#include "../../imgui/imgui_xorstr.h"
 #include <corecrt_math.h>
 
 namespace Util {
@@ -22,14 +24,14 @@ namespace Util {
 
 	VOID CreateConsole() {
 		AllocConsole();
-		static_cast<VOID>(freopen("CONIN$", "r", stdin));
-		static_cast<VOID>(freopen("CONOUT$", "w", stdout));
-		static_cast<VOID>(freopen("CONOUT$", "w", stderr));
+		static_cast<VOID>(freopen("CONIN$", xorstr("r"), stdin));
+		static_cast<VOID>(freopen("CONOUT$", xorstr("w"), stdout));
+		static_cast<VOID>(freopen("CONOUT$", xorstr("w"), stderr));
 	}
 
 	BOOLEAN MaskCompare(PVOID buffer, LPCSTR pattern, LPCSTR mask) {
 		for (auto b = reinterpret_cast<PBYTE>(buffer); *mask; ++pattern, ++mask, ++b) {
-			if (*mask == 'x' && *reinterpret_cast<LPCBYTE>(pattern) != *b) {
+			if (*mask == ('x') && *reinterpret_cast<LPCBYTE>(pattern) != *b) {
 				return FALSE;
 			}
 		}
@@ -81,7 +83,7 @@ namespace Util {
 				break;
 			}
 
-			name = internalName.c_str() + std::wstring(i > 0 ? L"." : L"") + name;
+			name = internalName.c_str() + std::wstring(i > 0 ? (xorstr(L".")) : xorstr(L"")) + name;
 			Free(internalName.c_str());
 		}
 
@@ -118,8 +120,8 @@ namespace Util {
 		for (auto& o : offsets) {
 			if (!o.Offset) {
 				WCHAR buffer[0xFF] = { 0 };
-				wsprintf(buffer, L"Offset %ws not found", o.Name);
-				MessageBox(0, buffer, L"Failure", 0);
+				wsprintf(buffer, xorstr(L"Offset %ws not found"), o.Name);
+				MessageBox(0, buffer, xorstr(L"Failure"), 0);
 			}
 		}
 
@@ -305,41 +307,41 @@ namespace Util {
 		// x48\x00\x00\x00\x00\x00\x00\x48\x98\x4C\x8B\x04\xD1\x48\x8D\x0C\x40\x49\x8D\x04\xC8\xEB\x02
 		// xx??????xxxxxxxxxxxxxxxx
 		
-	        auto addr = FindPattern("\x48\x8B\x05\x00\x00\x00\x00\x48\x8B\x0C\xC8\x48\x8B\x04\xD1", "xxx????xxxxxxxx");
+	        auto addr = FindPattern(xorstr("\x48\x8B\x05\x00\x00\x00\x00\x48\x8B\x0C\xC8\x48\x8B\x04\xD1"), xorstr("xxx????xxxxxxxx"));
 		if (!addr) {
-			MessageBox(0, L"Failed to find GOjects.", L"github.com/visual9999", 0);
+			MessageBox(0, xorstr(L"Failed to find GOjects."), xorstr(L"github.com/visual9999"), 0);
 			return FALSE;
 		}
 
 		objects = reinterpret_cast<decltype(objects)>(RELATIVE_ADDR(addr, 7));
 
-		addr = FindPattern("\x48\x89\x5C\x24\x00\x48\x89\x74\x24\x00\x55\x57\x41\x56\x48\x8D\xAC\x24\x00\x00\x00\x00\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x85\x00\x00\x00\x00\x45\x33\xF6\x48\x8B\xF2\x44\x39\x71\x04\x0F\x85\x00\x00\x00\x00\x8B\x19\x0F\xB7\xFB\xE8\x00\x00\x00\x00\x8B\xCB\x48\x8D\x54\x24", "xxxxx????xxxxxxxxxxxxxxxx????xxxxx????xxxxxxxxxxxxx????xxx");
+		addr = FindPattern(xorstr("\x48\x89\x5C\x24\x00\x48\x89\x74\x24\x00\x55\x57\x41\x56\x48\x8D\xAC\x24\x00\x00\x00\x00\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x85\x00\x00\x00\x00\x45\x33\xF6\x48\x8B\xF2\x44\x39\x71\x04\x0F\x85\x00\x00\x00\x00\x8B\x19\x0F\xB7\xFB\xE8\x00\x00\x00\x00\x8B\xCB\x48\x8D\x54\x24"), xorstr("xxxxx????xxxxxxxxxxxxxxxx????xxxxx????xxxxxxxxxxxxx????xxx"));
 		if (!addr) {
-			MessageBox(0, L"Failed to find GetObjectNameInternal.", L"github.com/visual9999", 0);
+			MessageBox(0, xorstr(L"Failed to find GetObjectNameInternal."), xorstr(L"github.com/visual9999"), 0);
 			return FALSE;
 		}
 
 		GetObjectNameInternal = reinterpret_cast<decltype(GetObjectNameInternal)>(addr);
 
-		addr = FindPattern("\x48\x85\xC9\x0F\x84\x00\x00\x00\x00\x53\x48\x83\xEC\x20\x48\x89\x7C\x24\x30\x48\x8B\xD9\x48\x8B\x3D\x00\x00\x00\x00\x48\x85\xFF\x0F\x84\x00\x00\x00\x00\x48\x8B\x07\x4C\x8B\x40\x30\x48\x8D\x05\x00\x00\x00\x00\x4C\x3B\xC0", "xxxxx????xxxxxxxxxxxxxxxx????xxxxx????xxxxxxxxxxxxx????xxx");
+		addr = FindPattern(xorstr("\x48\x85\xC9\x0F\x84\x00\x00\x00\x00\x53\x48\x83\xEC\x20\x48\x89\x7C\x24\x30\x48\x8B\xD9\x48\x8B\x3D\x00\x00\x00\x00\x48\x85\xFF\x0F\x84\x00\x00\x00\x00\x48\x8B\x07\x4C\x8B\x40\x30\x48\x8D\x05\x00\x00\x00\x00\x4C\x3B\xC0"), xorstr("xxxxx????xxxxxxxxxxxxxxxx????xxxxx????xxxxxxxxxxxxx????xxx"));
 		if (!addr) {
-			MessageBox(0, L"Failed to find FreeInternal.", L"github.com/visual9999", 0);
+			MessageBox(0, xorstr(L"Failed to find FreeInternal."), xorstr(L"github.com/visual9999"), 0);
 			return FALSE;
 		}
 
 		FreeInternal = reinterpret_cast<decltype(FreeInternal)>(addr);
 
-		addr = FindPattern("\xE8\x00\x00\x00\x00\x41\x88\x07\x48\x83\xC4\x30", "x????xxxxxxx");
+		addr = FindPattern(xorstr("\xE8\x00\x00\x00\x00\x41\x88\x07\x48\x83\xC4\x30"), xorstr("x????xxxxxxx"));
 		if (!addr) {
-			MessageBox(0, L"Failed to find ProjectionMatrixGivenView.", L"github.com/visual9999", 0);
+			MessageBox(0, xorstr(L"Failed to find ProjectionMatrixGivenView."), xorstr(L"github.com/visual9999"), 0);
 			return FALSE;
 		}
 
 		addr -= 0x280;
 		DISCORD.HookFunction((uintptr_t)addr, (uintptr_t)CalculateProjectionMatrixGivenViewHook, (uintptr_t)&CalculateProjectionMatrixGivenView);
-		addr = FindPattern("\xE8\x00\x00\x00\x00\x48\x8B\x0D\x00\x00\x00\x00\x33\xD2\x40\x8A\xF8", "x????xxx????xxxxx");
+		addr = FindPattern(xorstr("\xE8\x00\x00\x00\x00\x48\x8B\x0D\x00\x00\x00\x00\x33\xD2\x40\x8A\xF8"), xorstr("x????xxx????xxxxx"));
 		if (!addr) {
-			MessageBox(0, L"Failed to find LineOfSightTo.", L"github.com/visual9999", 0);
+			MessageBox(0, xorstr(L"Failed to find LineOfSightTo."), xorstr(L"github.com/visual9999"), 0);
 			return FALSE;
 		}
 
