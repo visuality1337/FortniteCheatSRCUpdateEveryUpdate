@@ -5,6 +5,8 @@ Visual#9999, Updated by bunyip24#9999
 
 #include "../../Header Files/includes.h"
 #include "../../Header Files/Config/config.h"
+#include "../../Header Files/xorstr.h"
+#include "../../imgui/imgui_xorstr.h"
 
 //config_system Settings = { 0 };
 
@@ -12,9 +14,9 @@ namespace SettingsHelper {
 	VOID SaveSettings() {
 		CHAR path[0xFF];
 		GetTempPathA(sizeof(path) / sizeof(path[0]), path);
-		strcat(path, ("fnambt.settings"));
+		strcat(path, (xorstr("fnambt.settings")));
 
-		auto file = fopen(path, ("wb"));
+		auto file = fopen(path, (xorstr("wb")));
 		if (file) {
 			fwrite(&config_system.item, sizeof(config_system.item), 1, file);
 			fclose(file);
@@ -113,9 +115,9 @@ namespace SettingsHelper {
 	VOID Initialize() {
 		CHAR path[0xFF] = { 0 };
 		GetTempPathA(sizeof(path) / sizeof(path[0]), path);
-		strcat(path, ("fnambt.settings"));
+		strcat(path, (xorstr("fnambt.settings")));
 
-		auto file = fopen(path, ("rb"));
+		auto file = fopen(path, (xorstr("rb")));
 		if (file) {
 			fseek(file, 0, SEEK_END);
 			auto size = ftell(file);
