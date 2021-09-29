@@ -3,6 +3,8 @@
 Visual#9999, Updated by bunyip24#9999
 */
 
+#include "../../Header Files/xorstr.h"
+#include "../../imgui/imgui_xorstr.h"
 #include "../Header Files/includes.h"
 namespace Offsets {
 	PVOID* uWorld = 0;
@@ -125,32 +127,32 @@ namespace Offsets {
 	}
 
 	BOOLEAN Initialize() {
-		auto addr = Util::FindPattern("\x48\x8B\x05\x00\x00\x00\x00\x4D\x8B\xC2", "xxx????xxx");
+		auto addr = Util::FindPattern(xorstr("\x48\x8B\x05\x00\x00\x00\x00\x4D\x8B\xC2"), xorstr("xxx????xxx"));
 		if (!addr) {
-			MessageBox(0, L"Please contact an administrator and give the error code:\n0x08", L"Error", 0);
+			MessageBox(0, xorstr(L"Please contact an administrator and give the error code:\n0x08"), xorstr(L"Error"), 0);
 			return FALSE;
 		}
 
 		uWorld = reinterpret_cast<decltype(uWorld)>(RELATIVE_ADDR(addr, 7));
 
 		// SetControlRotation
-		Engine::Controller::SetControlRotation = Util::FindObject(L"/Script/Engine.Controller.SetControlRotation");
+		Engine::Controller::SetControlRotation = Util::FindObject(xorstr(L"/Script/Engine.Controller.SetControlRotation"));
 		if (!Engine::Controller::SetControlRotation) {
-			MessageBox(0, L"Please contact an administrator and give the error code:\n0x09", L"Error", 0);
+			MessageBox(0, xorstr(L"Please contact an administrator and give the error code:\n0x09"), xorstr(L"Error"), 0);
 			return FALSE;
 		}
 
 		// ClientSetRotation
-		Engine::Controller::ClientSetRotation = Util::FindObject(L"/Script/Engine.Controller.ClientSetRotation");
+		Engine::Controller::ClientSetRotation = Util::FindObject(xorstr(L"/Script/Engine.Controller.ClientSetRotation"));
 		if (!Engine::Controller::ClientSetRotation) {
-			MessageBox(0, L"Please contact an administrator and give the error code:\n0x10", L"Error", 0);
+			MessageBox(0, xorstr(L"Please contact an administrator and give the error code:\n0x10"), xorstr(L"Error"), 0);
 			return FALSE;
 		}
 
 		// GetPlayerName
-		Engine::PlayerState::GetPlayerName = Util::FindObject(L"/Script/Engine.PlayerState.GetPlayerName");
+		Engine::PlayerState::GetPlayerName = Util::FindObject(xorstr(L"/Script/Engine.PlayerState.GetPlayerName"));
 		if (!Engine::PlayerState::GetPlayerName) {
-			MessageBox(0, L"Please contact an administrator and give the error code:\n0x11", L"Error", 0);
+			MessageBox(0, xorstr(L"Please contact an administrator and give the error code:\n0x11"), xorstr(L"Error"), 0);
 			return FALSE;
 		}
 
