@@ -4,6 +4,8 @@ Visual#9999, Updated by bunyip24#9999
 */
 
 #include "../../Header Files/FortUpdaters/FortUpdaters.h"
+#include "../../Header Files/xorstr.h"
+#include "../../imgui/imgui_xorstr.h"
 
 template<class T>
 struct TArray
@@ -130,8 +132,8 @@ DWORD FortUpdater::FindOffset(const char* Class, const char* varName)
 								return Offset;
 							}
 						}
-						printf(" % X", Offset);
-						system("pause");
+						printf(xorstr(" % X", Offset));
+						system(xorstr("pause"));
 					}
 				}
 
