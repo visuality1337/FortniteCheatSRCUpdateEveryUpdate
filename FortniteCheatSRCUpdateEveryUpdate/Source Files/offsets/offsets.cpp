@@ -127,7 +127,7 @@ namespace Offsets {
 	}
 
 	BOOLEAN Initialize() {
-		auto addr = Util::FindPattern(xorstr("\x48\x8B\x05\x00\x00\x00\x00\x4D\x8B\xC2"), xorstr("xxx????xxx"));
+		auto addr = Util::FindPattern(xorstr("\x48\x89\x05\x00\x00\x00\x00\x48\x8B\x4B\x78\"), xorstr("xxx????xxxx"));
 		if (!addr) {
 			MessageBox(0, xorstr(L"Please contact an administrator and give the error code:\n0x08"), xorstr(L"Error"), 0);
 			return FALSE;
