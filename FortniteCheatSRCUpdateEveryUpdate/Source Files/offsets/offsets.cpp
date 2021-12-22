@@ -16,7 +16,7 @@ namespace Offsets {
 		}
 
 		namespace Level {
-			DWORD AActors = 0x98;
+			DWORD AActors = 0;
 		}
 
 		namespace GameInstance {
@@ -24,22 +24,22 @@ namespace Offsets {
 		}
 
 		namespace Player {
-			DWORD PlayerController = 0x30;
+			DWORD PlayerController = 0;
 		}
 
 		namespace Controller {
-			DWORD ControlRotation = 0x280;
+			DWORD ControlRotation = 0;
 			PVOID SetControlRotation = 0;
 			PVOID ClientSetRotation;
 		}
 
 		namespace PlayerController {
-			DWORD AcknowledgedPawn = 0x298;
-			DWORD PlayerCameraManager = 0x2B0;
+			DWORD AcknowledgedPawn = 0;
+			DWORD PlayerCameraManager = 0;
 		}
 
 		namespace Pawn {
-			DWORD PlayerState = 0x238;
+			DWORD PlayerState = 0;
 		}
 
 		namespace PlayerState {
@@ -47,68 +47,68 @@ namespace Offsets {
 		}
 
 		namespace Actor {
-			DWORD RootComponent = 0x130;
-			DWORD CustomTimeDilation = 0x98;
+			DWORD RootComponent = 0;
+			DWORD CustomTimeDilation = 0;
 		}
 
 		namespace Character {
-			DWORD Mesh = 0x278;
+			DWORD Mesh = 0;
 		}
 
 		namespace SceneComponent {
-			DWORD RelativeLocation = 0x11C;
-			DWORD ComponentVelocity = 0x140;
+			DWORD RelativeLocation = 0;
+			DWORD ComponentVelocity = 0;
 		}
 
 		namespace StaticMeshComponent {
-			DWORD ComponentToWorld = 0x1C0;
-			DWORD StaticMesh = 0x480;
+			DWORD ComponentToWorld = 0;
+			DWORD StaticMesh = 0;
 		}
 
 		namespace SkinnedMeshComponent {
-			DWORD CachedWorldSpaceBounds = 0x5A0;
+			DWORD CachedWorldSpaceBounds = 0;
 		}
 	}
 
 	namespace FortniteGame {
 		namespace FortPawn {
-			DWORD bIsDBNO = 0x53A;
-			DWORD bIsDying = 0x520;
-			DWORD CurrentWeapon = 0x588;
+			DWORD bIsDBNO = 0;
+			DWORD bIsDying = 0;
+			DWORD CurrentWeapon = 0;
 		}
 
 		namespace FortPickup {
-			DWORD PrimaryPickupItemEntry = 0x280;
+			DWORD PrimaryPickupItemEntry = 0;
 		}
 
 		namespace FortItemEntry {
-			DWORD ItemDefinition = 0x18;
+			DWORD ItemDefinition = 0;
 		}
 
 		namespace FortItemDefinition {
-			DWORD DisplayName = 0x70;
-			DWORD Tier = 0x54;
+			DWORD DisplayName = 0;
+			DWORD Tier = 0;
 		}
 
 		namespace FortPlayerStateAthena {
-			DWORD TeamIndex = 0xE60;
+			DWORD TeamIndex = 0;
 		}
 
 		namespace FortWeapon {
-			DWORD WeaponData = 0x358;
-			DWORD AmmoCount = 0x974;
+			DWORD WeaponData = 0;
+			DWORD AmmoCount = 0;
 		}
 
 		namespace FortHoagieVehicle {
-			DWORD BoostCooldown = 0x105C;
+			DWORD BoostCooldown = 0;
 		}
 
 		namespace FortWeaponItemDefinition {
-			DWORD WeaponStatHandle = 0x7B8;
+			DWORD WeaponStatHandle = 0;
 		}
 
 		namespace FortProjectileAthena {
-			DWORD FireStartLoc = 0x850;
+			DWORD FireStartLoc = 0;
 		}
 
 		namespace FortBaseWeaponStats {
@@ -116,7 +116,7 @@ namespace Offsets {
 		}
 
 		namespace BuildingContainer {
-			DWORD bAlreadySearched = 0xC59;
+			DWORD bAlreadySearched = 0;
 		}
 	}
 
@@ -156,33 +156,33 @@ namespace Offsets {
 			return FALSE;
 		}
 
-		Engine::World::Levels = 0x138;
+		Engine::World::Levels = 0x148;
 		Engine::GameInstance::LocalPlayers = 0x38;
-		Engine::World::OwningGameInstance = 0x180;
-		Engine::Controller::ControlRotation = 0x288;
-		Engine::PlayerController::PlayerCameraManager = 0x2B8;
-		Engine::PlayerController::AcknowledgedPawn = 0x2A0;
-		Engine::Pawn::PlayerState = 0x240;
+		Engine::World::OwningGameInstance = 0x190;
+		Engine::Controller::ControlRotation = 0x290;
+		Engine::PlayerController::PlayerCameraManager = 0x2C0;
+		Engine::PlayerController::AcknowledgedPawn = 0x2A8;
+		Engine::Pawn::PlayerState = 0x238;
 		Engine::Actor::RootComponent = 0x130;
 		Engine::Character::Mesh = 0x280;
 		Engine::SceneComponent::RelativeLocation = 0x11C;
 		Engine::SceneComponent::ComponentVelocity = 0x140;
-		Engine::StaticMeshComponent::StaticMesh = 0x480;
-		Engine::SkinnedMeshComponent::CachedWorldSpaceBounds = 0x600;
+		Engine::StaticMeshComponent::StaticMesh = 0x488;
+		Engine::SkinnedMeshComponent::CachedWorldSpaceBounds = 0x638;
 		Engine::Actor::CustomTimeDilation = 0x98;
-		FortniteGame::FortPawn::bIsDBNO = 0x56E;
-		FortniteGame::FortPawn::bIsDying = 0x540;
-		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xED0;
-		FortniteGame::FortPickup::PrimaryPickupItemEntry = 0x2A8;
+		FortniteGame::FortPawn::bIsDBNO = 0x572;
+		FortniteGame::FortPawn::bIsDying = 0x548;
+		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xF28;
+		FortniteGame::FortPickup::PrimaryPickupItemEntry = 0x2A0;
 		FortniteGame::FortItemDefinition::DisplayName = 0x88;
 		FortniteGame::FortItemDefinition::Tier = 0x6C;
 		FortniteGame::FortItemEntry::ItemDefinition = 0x18;
-		FortniteGame::FortPawn::CurrentWeapon = 0x5F0;
+		FortniteGame::FortPawn::CurrentWeapon = 0x5F8;
 		FortniteGame::FortWeapon::WeaponData = 0x378;
-		FortniteGame::FortWeaponItemDefinition::WeaponStatHandle = 0x820;
-		FortniteGame::FortProjectileAthena::FireStartLoc = 0x878;
+		FortniteGame::FortWeaponItemDefinition::WeaponStatHandle = 0x8B8;
+		FortniteGame::FortProjectileAthena::FireStartLoc = 0x8B8;
 		FortniteGame::FortBaseWeaponStats::ReloadTime = 0xFC;
-		FortniteGame::BuildingContainer::bAlreadySearched = 0xC81;
+		FortniteGame::BuildingContainer::bAlreadySearched = 0xDF9; 
 
 
 		return TRUE;
