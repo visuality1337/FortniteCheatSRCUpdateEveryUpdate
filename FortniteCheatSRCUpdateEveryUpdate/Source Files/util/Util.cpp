@@ -304,7 +304,35 @@ namespace Util {
 
 	BOOLEAN Initialize() {
 		
-// here sigs i promise soon....
+        addr = FindPattern(xorstr(""), xorstr(""));
+        if (!addr) {
+            MessageBox(0, xorstr(L"Failed to find GetObjectNameInternal."), xorstr(L"github.com/visual9999"), 0);
+            return FALSE;
+        }
+
+        GetObjectNameInternal = reinterpret_cast<decltype(GetObjectNameInternal)>(addr);
+
+        addr = FindPattern(xorstr(""), xorstr(""));
+        if (!addr) {
+            MessageBox(0, xorstr(L"Failed to find FreeInternal."), xorstr(L"github.com/visual9999"), 0);
+            return FALSE;
+        }
+
+        FreeInternal = reinterpret_cast<decltype(FreeInternal)>(addr);
+
+        addr = FindPattern(xorstr(""), xorstr(""));
+        if (!addr) {
+            MessageBox(0, xorstr(L"Failed to find ProjectionMatrixGivenView."), xorstr(L"github.com/visual9999"), 0);
+            return FALSE;
+        }
+
+        addr -= 0x280;
+        DISCORD.HookFunction((uintptr_t)addr, (uintptr_t)CalculateProjectionMatrixGivenViewHook, (uintptr_t)&CalculateProjectionMatrixGivenView);
+        addr = FindPattern(xorstr(""), xorstr(""));
+        if (!addr) {
+            MessageBox(0, xorstr(L"Failed to find LineOfSightTo."), xorstr(L"github.com/visual9999"), 0);
+            return FALSE;
+        }
 
 		LineOfSightToInternal = reinterpret_cast<decltype(LineOfSightToInternal)>(addr);
 
