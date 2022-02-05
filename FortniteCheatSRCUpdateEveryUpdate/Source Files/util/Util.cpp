@@ -304,8 +304,7 @@ namespace Util {
 
 	BOOLEAN Initialize() {
 		
-// ok
-
+// here sigs i promise soon....
 
 		LineOfSightToInternal = reinterpret_cast<decltype(LineOfSightToInternal)>(addr);
 
