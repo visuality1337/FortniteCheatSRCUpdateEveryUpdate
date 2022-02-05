@@ -1,6 +1,6 @@
 /*
 
-Visual#9999, Updated by bunyip24#9999
+Visual#9999
 */
 
 #include "../../Header Files/xorstr.h"
@@ -161,10 +161,10 @@ namespace Offsets {
 		Engine::World::OwningGameInstance = 0x190;
 		Engine::Controller::ControlRotation = 0x290;
 		Engine::PlayerController::PlayerCameraManager = 0x2C0;
-		Engine::PlayerController::AcknowledgedPawn = 0x2A8;
-		Engine::Pawn::PlayerState = 0x238;
-		Engine::Actor::RootComponent = 0x130;
-		Engine::Character::Mesh = 0x280;
+		Engine::PlayerController::AcknowledgedPawn = 0x2B0;
+		Engine::Pawn::PlayerState = 0x240;
+		Engine::Actor::RootComponent = 0x138;
+		Engine::Character::Mesh = 0x288;
 		Engine::SceneComponent::RelativeLocation = 0x11C;
 		Engine::SceneComponent::ComponentVelocity = 0x140;
 		Engine::StaticMeshComponent::StaticMesh = 0x488;
@@ -172,17 +172,17 @@ namespace Offsets {
 		Engine::Actor::CustomTimeDilation = 0x98;
 		FortniteGame::FortPawn::bIsDBNO = 0x572;
 		FortniteGame::FortPawn::bIsDying = 0x548;
-		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xF28;
-		FortniteGame::FortPickup::PrimaryPickupItemEntry = 0x2A0;
+		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xF50;
+		FortniteGame::FortPickup::PrimaryPickupItemEntry = 0x2A8;
 		FortniteGame::FortItemDefinition::DisplayName = 0x88;
 		FortniteGame::FortItemDefinition::Tier = 0x6C;
 		FortniteGame::FortItemEntry::ItemDefinition = 0x18;
 		FortniteGame::FortPawn::CurrentWeapon = 0x5F8;
-		FortniteGame::FortWeapon::WeaponData = 0x378;
+		FortniteGame::FortWeapon::WeaponData = 0x380;
 		FortniteGame::FortWeaponItemDefinition::WeaponStatHandle = 0x8B8;
-		FortniteGame::FortProjectileAthena::FireStartLoc = 0x8B8;
+		FortniteGame::FortProjectileAthena::FireStartLoc = 0x8C8;
 		FortniteGame::FortBaseWeaponStats::ReloadTime = 0xFC;
-		FortniteGame::BuildingContainer::bAlreadySearched = 0xDF9; 
+		FortniteGame::BuildingContainer::bAlreadySearched = 0xE01; 
 
 
 		return TRUE;
