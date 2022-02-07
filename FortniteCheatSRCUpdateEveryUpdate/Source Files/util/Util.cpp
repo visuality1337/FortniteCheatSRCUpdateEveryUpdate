@@ -328,7 +328,7 @@ namespace Util {
 
         addr -= 0x280;
         DISCORD.HookFunction((uintptr_t)addr, (uintptr_t)CalculateProjectionMatrixGivenViewHook, (uintptr_t)&CalculateProjectionMatrixGivenView);
-        addr = FindPattern(xorstr(""), xorstr(""));
+        addr = FindObject(xorstr(L"/Script/Engine.Controller.LineOfSightTo"));
         if (!addr) {
             MessageBox(0, xorstr(L"Failed to find LineOfSightTo."), xorstr(L"github.com/visual9999"), 0);
             return FALSE;
