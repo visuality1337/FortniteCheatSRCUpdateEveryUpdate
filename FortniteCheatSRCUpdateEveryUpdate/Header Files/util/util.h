@@ -25,6 +25,7 @@ namespace Util {
 	FMinimalViewInfo& GetViewInfo();
 	FVector* GetPawnRootLocation(PVOID pawn);
 	VOID CalcAngle(float* src, float* dst, float* angles);
+	BOOL(*LineOfSightToInternal)(PVOID PlayerController, PVOID Actor, FVector* ViewPoint) = nullptr;
 
 	extern VOID(*FreeInternal)(PVOID);
 

@@ -14,7 +14,6 @@ namespace Util {
 	GObjects* objects = nullptr;
 	FString(*GetObjectNameInternal)(PVOID) = nullptr;
 	VOID(*FreeInternal)(PVOID) = nullptr;
-	BOOL(*LineOfSightToInternal)(PVOID PlayerController, PVOID Actor, FVector* ViewPoint) = nullptr;
 	VOID(*CalculateProjectionMatrixGivenView)(FMinimalViewInfo* viewInfo, BYTE aspectRatioAxisConstraint, PBYTE viewport, FSceneViewProjectionData* inOutProjectionData) = nullptr;
 
 	struct {
@@ -304,7 +303,7 @@ namespace Util {
 
 	BOOLEAN Initialize() {
 		
-        addr = FindPattern(xorstr(""), xorstr(""));
+        auto addr = FindPattern(xorstr(""), xorstr(""));
         if (!addr) {
             MessageBox(0, xorstr(L"Failed to find GetObjectNameInternal."), xorstr(L"github.com/visual9999"), 0);
             return FALSE;
@@ -328,13 +327,6 @@ namespace Util {
 
         addr -= 0x280;
         DISCORD.HookFunction((uintptr_t)addr, (uintptr_t)CalculateProjectionMatrixGivenViewHook, (uintptr_t)&CalculateProjectionMatrixGivenView);
-        addr = FindObject(xorstr(L"/Script/Engine.Controller.LineOfSightTo"));
-        if (!addr) {
-            MessageBox(0, xorstr(L"Failed to find LineOfSightTo."), xorstr(L"github.com/visual9999"), 0);
-            return FALSE;
-        }
-
-		LineOfSightToInternal = reinterpret_cast<decltype(LineOfSightToInternal)>(addr);
 
 		return TRUE;
 	}

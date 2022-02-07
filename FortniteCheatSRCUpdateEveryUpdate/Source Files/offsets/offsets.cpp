@@ -5,7 +5,8 @@ Visual#9999
 
 #include "../../Header Files/xorstr.h"
 #include "../../imgui/imgui_xorstr.h"
-#include "../Header Files/includes.h"
+#include "../../Header Files/includes.h"
+
 namespace Offsets {
 	PVOID* uWorld = 0;
 
@@ -152,6 +153,12 @@ namespace Offsets {
 		// GetPlayerName
 		Engine::PlayerState::GetPlayerName = Util::FindObject(xorstr(L"/Script/Engine.PlayerState.GetPlayerName"));
 		if (!Engine::PlayerState::GetPlayerName) {
+			MessageBox(0, xorstr(L"Please contact an administrator and give the error code:\n0x11"), xorstr(L"Error"), 0);
+			return FALSE;
+		}
+
+		Util::LineOfSightToInternal = decltype(Util::LineOfSightToInternal)(Util::FindObject(xorstr(L"/Script/Engine.Controller.LineOfSightTo")));
+		if (!Util::LineOfSightToInternal) {
 			MessageBox(0, xorstr(L"Please contact an administrator and give the error code:\n0x11"), xorstr(L"Error"), 0);
 			return FALSE;
 		}
