@@ -304,7 +304,7 @@ namespace Util {
 
 	BOOLEAN Initialize() {
 		
-        addr = FindPattern(xorstr(""), xorstr(""));
+        addr = FindPattern(xorstr("\x48\x89\x5C\x24\x08\x48\x89\x74\x24\x20\x55\x57\x41\x56\x48\x8B\xEC\x48\x83\xEC\x30\x48\x83\x65\x28\x00\x49\x8B\xF0\x48\x8B\xDA\xE8\x4F\x4B\xFD\xFE\x48\x83\x7B\x20\x00\x48\x8B\xCB\x0F\x84\xB3\x00\x00\x00\x48\x8B\x53\x18\x4C\x8D\x45\x28\xE8\x40\x89\xE7\xFE"), xorstr("xxxxxxxxxxxxxxxxxxxxxxxxx?xxxxxxxxxxxxxxx?xxxxxx???xxxxxxxxxxxxx"));
         if (!addr) {
             MessageBox(0, xorstr(L"Failed to find GetObjectNameInternal."), xorstr(L"github.com/visual9999"), 0);
             return FALSE;
@@ -312,7 +312,7 @@ namespace Util {
 
         GetObjectNameInternal = reinterpret_cast<decltype(GetObjectNameInternal)>(addr);
 
-        addr = FindPattern(xorstr(""), xorstr(""));
+        addr = FindPattern(xorstr("\x48\x85\xC9\x0F\x84\x00\x00\x00\x00\x53\x48\x83\xEC\x20\x48\x89\x7C\x24\x30\x48\x8B\xD9\x48\x8B\x3D\x00\x00\x00\x00\x48\x85\xFF\x0F\x84\x00\x00\x00\x00\x48\x8B\x07\x4C\x8B\x40\x30\x48\x8D\x05\x00\x00\x00\x00\x4C\x3B\xC0"), xorstr("xxxxx????xxxxxxxxxxxxxxxx????xxxxx????xxxxxxxxxxxxx????xxx"));
         if (!addr) {
             MessageBox(0, xorstr(L"Failed to find FreeInternal."), xorstr(L"github.com/visual9999"), 0);
             return FALSE;
@@ -320,7 +320,7 @@ namespace Util {
 
         FreeInternal = reinterpret_cast<decltype(FreeInternal)>(addr);
 
-        addr = FindPattern(xorstr(""), xorstr(""));
+        addr = FindPattern(xorstr("\xE8\x00\x00\x00\x00\x41\x88\x07\x48\x83\xC4\x30"), xorstr("x????xxxxxxx"));
         if (!addr) {
             MessageBox(0, xorstr(L"Failed to find ProjectionMatrixGivenView."), xorstr(L"github.com/visual9999"), 0);
             return FALSE;
@@ -328,7 +328,7 @@ namespace Util {
 
         addr -= 0x280;
         DISCORD.HookFunction((uintptr_t)addr, (uintptr_t)CalculateProjectionMatrixGivenViewHook, (uintptr_t)&CalculateProjectionMatrixGivenView);
-        addr = FindPattern(xorstr(""), xorstr(""));
+        addr = FindPattern(xorstr("\x48\x8B\xC4\x48\x89\x58\x20\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\x6C\x24\x00\x48\x81\xEC\x00\x00\x00\x00\x0F\x29\x70\xB8\x0F\x29\x78\xA8\x44\x0F\x29\x40\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x45\x20"), xorstr("xxxxxxxxxxxxxxxxxxxxxx?xxx????xxxxxxxxxxx?xxx????xxxxxx"));
         if (!addr) {
             MessageBox(0, xorstr(L"Failed to find LineOfSightTo."), xorstr(L"github.com/visual9999"), 0);
             return FALSE;
